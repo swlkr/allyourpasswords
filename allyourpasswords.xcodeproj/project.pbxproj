@@ -7,16 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		332C8A147F4059390FBA66A5 /* Pods_allyourpasswords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F81C33A9C0A4C5D426FA58B /* Pods_allyourpasswords.framework */; };
+		E812AC6C21F1248300EF6386 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC6B21F1248300EF6386 /* KeychainItemAccessibility.swift */; };
+		E812AC6E21F1249A00EF6386 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC6D21F1249A00EF6386 /* KeychainWrapper.swift */; };
+		E812AC7021F1263800EF6386 /* SetMasterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */; };
+		E812AC7221F1288800EF6386 /* UnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC7121F1288800EF6386 /* UnlockViewController.swift */; };
+		E812AC7421F132F100EF6386 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC7321F132F100EF6386 /* MainViewController.swift */; };
+		E8953AF021F11D1000BBB89E /* CustomTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */; };
+		E8953AF221F11D7300BBB89E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8953AF121F11D7300BBB89E /* Database.swift */; };
 		E8F939DB21F118FD004EFBB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F939DA21F118FD004EFBB2 /* AppDelegate.swift */; };
-		E8F939DD21F118FD004EFBB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F939DC21F118FD004EFBB2 /* ViewController.swift */; };
 		E8F939DF21F118FE004EFBB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8F939DE21F118FE004EFBB2 /* Assets.xcassets */; };
 		E8F939E221F118FE004EFBB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8F939E021F118FE004EFBB2 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		317F99F5E2198CD7EC329DEF /* Pods-allyourpasswords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allyourpasswords.release.xcconfig"; path = "Pods/Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords.release.xcconfig"; sourceTree = "<group>"; };
+		3F81C33A9C0A4C5D426FA58B /* Pods_allyourpasswords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_allyourpasswords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A033CE7BA06A368453303E2B /* Pods-allyourpasswords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allyourpasswords.debug.xcconfig"; path = "Pods/Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords.debug.xcconfig"; sourceTree = "<group>"; };
+		E812AC6B21F1248300EF6386 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
+		E812AC6D21F1249A00EF6386 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMasterPasswordViewController.swift; sourceTree = "<group>"; };
+		E812AC7121F1288800EF6386 /* UnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewController.swift; sourceTree = "<group>"; };
+		E812AC7321F132F100EF6386 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldCell.swift; sourceTree = "<group>"; };
+		E8953AF121F11D7300BBB89E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		E8F939D721F118FD004EFBB2 /* allyourpasswords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = allyourpasswords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F939DA21F118FD004EFBB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E8F939DC21F118FD004EFBB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E8F939DE21F118FE004EFBB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8F939E121F118FE004EFBB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8F939E321F118FE004EFBB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -28,17 +44,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				332C8A147F4059390FBA66A5 /* Pods_allyourpasswords.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		653FCFC2DB73BAFE788C2AD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A033CE7BA06A368453303E2B /* Pods-allyourpasswords.debug.xcconfig */,
+				317F99F5E2198CD7EC329DEF /* Pods-allyourpasswords.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E812AC6A21F1246C00EF6386 /* KeychainWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				E812AC6B21F1248300EF6386 /* KeychainItemAccessibility.swift */,
+				E812AC6D21F1249A00EF6386 /* KeychainWrapper.swift */,
+			);
+			path = KeychainWrapper;
+			sourceTree = "<group>";
+		};
 		E8F939CE21F118FD004EFBB2 = {
 			isa = PBXGroup;
 			children = (
 				E8F939D921F118FD004EFBB2 /* allyourpasswords */,
 				E8F939D821F118FD004EFBB2 /* Products */,
+				653FCFC2DB73BAFE788C2AD1 /* Pods */,
+				FDE2624A157184A133332DAC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,14 +90,27 @@
 		E8F939D921F118FD004EFBB2 /* allyourpasswords */ = {
 			isa = PBXGroup;
 			children = (
-				E8F939DA21F118FD004EFBB2 /* AppDelegate.swift */,
-				E8F939DC21F118FD004EFBB2 /* ViewController.swift */,
-				E8F939DE21F118FE004EFBB2 /* Assets.xcassets */,
-				E8F939E021F118FE004EFBB2 /* Main.storyboard */,
-				E8F939E321F118FE004EFBB2 /* Info.plist */,
 				E8F939E421F118FE004EFBB2 /* allyourpasswords.entitlements */,
+				E8F939E321F118FE004EFBB2 /* Info.plist */,
+				E8F939DA21F118FD004EFBB2 /* AppDelegate.swift */,
+				E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */,
+				E8953AF121F11D7300BBB89E /* Database.swift */,
+				E812AC7321F132F100EF6386 /* MainViewController.swift */,
+				E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */,
+				E812AC7121F1288800EF6386 /* UnlockViewController.swift */,
+				E8F939DE21F118FE004EFBB2 /* Assets.xcassets */,
+				E812AC6A21F1246C00EF6386 /* KeychainWrapper */,
+				E8F939E021F118FE004EFBB2 /* Main.storyboard */,
 			);
 			path = allyourpasswords;
+			sourceTree = "<group>";
+		};
+		FDE2624A157184A133332DAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F81C33A9C0A4C5D426FA58B /* Pods_allyourpasswords.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,9 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8F939E721F118FE004EFBB2 /* Build configuration list for PBXNativeTarget "allyourpasswords" */;
 			buildPhases = (
+				E13D9F7FA3524CFC8B2F99F8 /* [CP] Check Pods Manifest.lock */,
 				E8F939D321F118FD004EFBB2 /* Sources */,
 				E8F939D421F118FD004EFBB2 /* Frameworks */,
 				E8F939D521F118FD004EFBB2 /* Resources */,
+				AA49E6EC57F3A27C28F0CAE8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,13 +180,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AA49E6EC57F3A27C28F0CAE8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SQLCipher/SQLCipher.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLCipher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E13D9F7FA3524CFC8B2F99F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-allyourpasswords-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E8F939D321F118FD004EFBB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8F939DD21F118FD004EFBB2 /* ViewController.swift in Sources */,
+				E812AC7221F1288800EF6386 /* UnlockViewController.swift in Sources */,
+				E8953AF021F11D1000BBB89E /* CustomTextFieldCell.swift in Sources */,
+				E8953AF221F11D7300BBB89E /* Database.swift in Sources */,
+				E812AC6E21F1249A00EF6386 /* KeychainWrapper.swift in Sources */,
+				E812AC6C21F1248300EF6386 /* KeychainItemAccessibility.swift in Sources */,
+				E812AC7021F1263800EF6386 /* SetMasterPasswordViewController.swift in Sources */,
 				E8F939DB21F118FD004EFBB2 /* AppDelegate.swift in Sources */,
+				E812AC7421F132F100EF6386 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,9 +376,11 @@
 		};
 		E8F939E821F118FE004EFBB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A033CE7BA06A368453303E2B /* Pods-allyourpasswords.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = allyourpasswords/allyourpasswords.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3822QQG8P7;
@@ -282,15 +391,18 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.swlkr.allyourpasswords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		E8F939E921F118FE004EFBB2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 317F99F5E2198CD7EC329DEF /* Pods-allyourpasswords.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = allyourpasswords/allyourpasswords.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3822QQG8P7;
@@ -301,6 +413,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.swlkr.allyourpasswords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;

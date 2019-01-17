@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="allyourpasswords" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -682,36 +683,199 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                <windowController storyboardIdentifier="WindowController" id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="200" y="600" width="800" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
-                    <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
-                    </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="58" y="105"/>
+        </scene>
+        <!--Set Master Password View Controller-->
+        <scene sceneID="4f6-ol-8V9">
+            <objects>
+                <viewController storyboardIdentifier="SetMasterPasswordViewController" id="7N9-xh-5oD" customClass="SetMasterPasswordViewController" customModule="allyourpasswords" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="c9k-MU-SyA">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IDO-pA-AQL">
+                                <rect key="frame" x="15" y="280" width="770" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3pm-5R-8Ly"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" drawsBackground="YES" id="2Yn-3j-V3b" customClass="CustomTextFieldCell" customModule="allyourpasswords" customModuleProvider="target">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="masterPasswordTextFieldEnterPressed:" target="7N9-xh-5oD" id="SY7-Vn-lKz"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HNx-aV-T9R">
+                                <rect key="frame" x="13" y="328" width="163" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Set Your Master Password" id="7VZ-xa-1HH">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EbO-jO-6Mk">
+                                <rect key="frame" x="14" y="230" width="772" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nyv-hU-gdh"/>
+                                </constraints>
+                                <buttonCell key="cell" type="squareTextured" title="Set Password" bezelStyle="texturedSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="udi-KQ-jMr">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="setPasswordClicked:" target="7N9-xh-5oD" id="jYs-X3-DOK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="IDO-pA-AQL" firstAttribute="leading" secondItem="c9k-MU-SyA" secondAttribute="leading" constant="15" id="8L5-Wt-9uQ"/>
+                            <constraint firstItem="IDO-pA-AQL" firstAttribute="centerX" secondItem="c9k-MU-SyA" secondAttribute="centerX" id="B9Z-xY-4kR"/>
+                            <constraint firstItem="IDO-pA-AQL" firstAttribute="centerY" secondItem="c9k-MU-SyA" secondAttribute="centerY" id="BWk-4v-WtM"/>
+                            <constraint firstAttribute="trailing" secondItem="EbO-jO-6Mk" secondAttribute="trailing" constant="15" id="NQI-9j-IAa"/>
+                            <constraint firstItem="IDO-pA-AQL" firstAttribute="top" secondItem="HNx-aV-T9R" secondAttribute="bottom" constant="8" id="ZXI-aC-aKy"/>
+                            <constraint firstItem="HNx-aV-T9R" firstAttribute="leading" secondItem="c9k-MU-SyA" secondAttribute="leading" constant="15" id="cUD-CB-BR9"/>
+                            <constraint firstItem="EbO-jO-6Mk" firstAttribute="leading" secondItem="c9k-MU-SyA" secondAttribute="leading" constant="15" id="caZ-cA-cKc"/>
+                            <constraint firstAttribute="trailing" secondItem="IDO-pA-AQL" secondAttribute="trailing" constant="15" id="g7v-gv-iPU"/>
+                            <constraint firstItem="EbO-jO-6Mk" firstAttribute="top" secondItem="IDO-pA-AQL" secondAttribute="bottom" constant="8" id="wlC-df-aBS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="masterPasswordTextField" destination="IDO-pA-AQL" id="14f-W4-EAp"/>
+                    </connections>
+                </viewController>
+                <customObject id="N1g-LV-uRa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="58" y="784"/>
+        </scene>
+        <!--Unlock View Controller-->
+        <scene sceneID="w8i-O9-hQH">
+            <objects>
+                <viewController storyboardIdentifier="UnlockViewController" id="ZaM-Hj-dFZ" customClass="UnlockViewController" customModule="allyourpasswords" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="JKI-A3-iBe">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rZj-B0-drG">
+                                <rect key="frame" x="18" y="328" width="165" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Unlock All Your Passwords" id="2ZT-7g-lDo">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dsi-H4-vSK">
+                                <rect key="frame" x="19" y="230" width="762" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="shY-IB-ada"/>
+                                </constraints>
+                                <buttonCell key="cell" type="squareTextured" title="Unlock" bezelStyle="texturedSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="F9g-bu-UaQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="unlockPressed:" target="ZaM-Hj-dFZ" id="xt1-OB-Cln"/>
+                                </connections>
+                            </button>
+                            <secureTextField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMT-aU-vpy">
+                                <rect key="frame" x="20" y="280" width="760" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5yk-ck-i7W"/>
+                                </constraints>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="Uoc-Oh-ZZy" customClass="CustomSecureTextFieldCell" customModule="allyourpasswords" customModuleProvider="target">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                            </secureTextField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="lMT-aU-vpy" firstAttribute="leading" secondItem="JKI-A3-iBe" secondAttribute="leading" constant="20" id="Cmz-09-2W9"/>
+                            <constraint firstItem="lMT-aU-vpy" firstAttribute="top" secondItem="rZj-B0-drG" secondAttribute="bottom" constant="8" id="NSD-2R-Wgb"/>
+                            <constraint firstItem="Dsi-H4-vSK" firstAttribute="leading" secondItem="JKI-A3-iBe" secondAttribute="leading" constant="20" id="UX4-5u-BdC"/>
+                            <constraint firstItem="lMT-aU-vpy" firstAttribute="centerY" secondItem="JKI-A3-iBe" secondAttribute="centerY" id="X38-97-34s"/>
+                            <constraint firstItem="rZj-B0-drG" firstAttribute="leading" secondItem="JKI-A3-iBe" secondAttribute="leading" constant="20" id="aMz-zR-DKR"/>
+                            <constraint firstAttribute="trailing" secondItem="lMT-aU-vpy" secondAttribute="trailing" constant="20" id="i96-jU-BZZ"/>
+                            <constraint firstItem="Dsi-H4-vSK" firstAttribute="top" secondItem="lMT-aU-vpy" secondAttribute="bottom" constant="8" id="iUO-Dk-tEo"/>
+                            <constraint firstAttribute="trailing" secondItem="Dsi-H4-vSK" secondAttribute="trailing" constant="20" id="sBS-78-MqJ"/>
+                            <constraint firstItem="lMT-aU-vpy" firstAttribute="centerX" secondItem="JKI-A3-iBe" secondAttribute="centerX" id="vC9-Qg-uLh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="masterPasswordTextField" destination="lMT-aU-vpy" id="mno-4X-Oi3"/>
+                    </connections>
+                </viewController>
+                <customObject id="Ae0-6O-xTP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="895" y="784"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="czC-4m-goR">
+            <objects>
+                <splitViewController storyboardIdentifier="MainViewController" id="i6t-EQ-gWw" customClass="MainViewController" customModule="allyourpasswords" customModuleProvider="target" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="UiF-JX-lVg"/>
+                        <splitViewItem id="NWm-ZR-DZY"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="1tA-of-Bun">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="i6t-EQ-gWw" id="izk-Qy-NHz"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="1tA-of-Bun" id="EoM-uZ-gcE"/>
+                        <segue destination="5LL-jD-CDo" kind="relationship" relationship="splitItems" id="pN0-w6-fg8"/>
+                        <segue destination="dlJ-lZ-JgR" kind="relationship" relationship="splitItems" id="HyK-Ji-2Un"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="1Wm-rY-ENx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="481" y="1582"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <scene sceneID="x4N-ka-dPw">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController id="5LL-jD-CDo" sceneMemberID="viewController">
+                    <view key="view" id="Z6N-mJ-5M3">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="JcA-AN-yVg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="1524" y="1530"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Aeo-Zv-9Bp">
+            <objects>
+                <viewController id="dlJ-lZ-JgR" sceneMemberID="viewController">
+                    <view key="view" id="3OM-4c-9Si">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="600"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="5co-cr-DlV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1524" y="2265"/>
         </scene>
     </scenes>
 </document>

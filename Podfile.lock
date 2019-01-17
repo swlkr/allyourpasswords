@@ -1,0 +1,33 @@
+PODS:
+  - SQLCipher (4.0.1):
+    - SQLCipher/standard (= 4.0.1)
+  - SQLCipher/common (4.0.1)
+  - SQLCipher/standard (4.0.1):
+    - SQLCipher/common
+  - SQLite.swift/SQLCipher (0.11.5):
+    - SQLCipher (>= 3.4.0)
+
+DEPENDENCIES:
+  - SQLite.swift/SQLCipher (from `https://github.com/stephencelis/SQLite.swift.git`, commit `ed8f603f856e9f1f4adb76b63b7234547257ec5a`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SQLCipher
+
+EXTERNAL SOURCES:
+  SQLite.swift:
+    :commit: ed8f603f856e9f1f4adb76b63b7234547257ec5a
+    :git: https://github.com/stephencelis/SQLite.swift.git
+
+CHECKOUT OPTIONS:
+  SQLite.swift:
+    :commit: ed8f603f856e9f1f4adb76b63b7234547257ec5a
+    :git: https://github.com/stephencelis/SQLite.swift.git
+
+SPEC CHECKSUMS:
+  SQLCipher: 4636a257060f6f1b4e143a143028b61a2b462d0d
+  SQLite.swift: 7e42c4b88dc7a5d764fbd431001e6d8dc8c1cfce
+
+PODFILE CHECKSUM: bf4f21a6440eda33843ddb6ff06cf2fbe4b40c71
+
+COCOAPODS: 1.6.0.beta.2
