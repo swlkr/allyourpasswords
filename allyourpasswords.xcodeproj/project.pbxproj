@@ -13,8 +13,12 @@
 		E812AC7021F1263800EF6386 /* SetMasterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */; };
 		E812AC7221F1288800EF6386 /* UnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC7121F1288800EF6386 /* UnlockViewController.swift */; };
 		E812AC7421F132F100EF6386 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC7321F132F100EF6386 /* MainViewController.swift */; };
+		E842BCA621F14D2E00B131F2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */; };
 		E8953AF021F11D1000BBB89E /* CustomTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */; };
 		E8953AF221F11D7300BBB89E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8953AF121F11D7300BBB89E /* Database.swift */; };
+		E8F7CC3C21F2339E00F11AB6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F7CC3B21F2339E00F11AB6 /* TableViewController.swift */; };
+		E8F7CC3E21F233F400F11AB6 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F7CC3D21F233F400F11AB6 /* Login.swift */; };
+		E8F7CC4021F238E900F11AB6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F7CC3F21F238E900F11AB6 /* DetailViewController.swift */; };
 		E8F939DB21F118FD004EFBB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F939DA21F118FD004EFBB2 /* AppDelegate.swift */; };
 		E8F939DF21F118FE004EFBB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8F939DE21F118FE004EFBB2 /* Assets.xcassets */; };
 		E8F939E221F118FE004EFBB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8F939E021F118FE004EFBB2 /* Main.storyboard */; };
@@ -29,8 +33,12 @@
 		E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMasterPasswordViewController.swift; sourceTree = "<group>"; };
 		E812AC7121F1288800EF6386 /* UnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewController.swift; sourceTree = "<group>"; };
 		E812AC7321F132F100EF6386 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldCell.swift; sourceTree = "<group>"; };
 		E8953AF121F11D7300BBB89E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		E8F7CC3B21F2339E00F11AB6 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		E8F7CC3D21F233F400F11AB6 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		E8F7CC3F21F238E900F11AB6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E8F939D721F118FD004EFBB2 /* allyourpasswords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = allyourpasswords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F939DA21F118FD004EFBB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8F939DE21F118FE004EFBB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,10 +101,14 @@
 				E8F939E421F118FE004EFBB2 /* allyourpasswords.entitlements */,
 				E8F939E321F118FE004EFBB2 /* Info.plist */,
 				E8F939DA21F118FD004EFBB2 /* AppDelegate.swift */,
+				E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */,
 				E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */,
 				E8953AF121F11D7300BBB89E /* Database.swift */,
+				E8F7CC3D21F233F400F11AB6 /* Login.swift */,
 				E812AC7321F132F100EF6386 /* MainViewController.swift */,
 				E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */,
+				E8F7CC3B21F2339E00F11AB6 /* TableViewController.swift */,
+				E8F7CC3F21F238E900F11AB6 /* DetailViewController.swift */,
 				E812AC7121F1288800EF6386 /* UnlockViewController.swift */,
 				E8F939DE21F118FE004EFBB2 /* Assets.xcassets */,
 				E812AC6A21F1246C00EF6386 /* KeychainWrapper */,
@@ -234,13 +246,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E842BCA621F14D2E00B131F2 /* CustomTableViewCell.swift in Sources */,
 				E812AC7221F1288800EF6386 /* UnlockViewController.swift in Sources */,
 				E8953AF021F11D1000BBB89E /* CustomTextFieldCell.swift in Sources */,
+				E8F7CC4021F238E900F11AB6 /* DetailViewController.swift in Sources */,
+				E8F7CC3C21F2339E00F11AB6 /* TableViewController.swift in Sources */,
 				E8953AF221F11D7300BBB89E /* Database.swift in Sources */,
 				E812AC6E21F1249A00EF6386 /* KeychainWrapper.swift in Sources */,
 				E812AC6C21F1248300EF6386 /* KeychainItemAccessibility.swift in Sources */,
 				E812AC7021F1263800EF6386 /* SetMasterPasswordViewController.swift in Sources */,
 				E8F939DB21F118FD004EFBB2 /* AppDelegate.swift in Sources */,
+				E8F7CC3E21F233F400F11AB6 /* Login.swift in Sources */,
 				E812AC7421F132F100EF6386 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
