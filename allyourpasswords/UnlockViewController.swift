@@ -8,6 +8,7 @@
 
 import Cocoa
 import SQLite
+import LocalAuthentication
 
 extension NSWindow {
     func shakeWindow(){
@@ -39,14 +40,47 @@ class UnlockViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        showTouchID()
+    }
+    @IBAction func unlockWithTouchID(_ sender: NSButton) {
+        showTouchID()
+    }
+
+    func showTouchID() {
+        let context = LAContext()
+        context.localizedCancelTitle = "Cancel"
+        context.localizedFallbackTitle = "Unlock with password"
+
+        var error: NSError?
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "unlock AllYourPasswords"
+
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason ) { success, error in
+
+                if success {
+                    // Move to the main thread because a state update triggers UI changes.
+                    DispatchQueue.main.async { [unowned self] in
+                        self.showPasswords()
+                    }
+
+                } else {
+                    print(error?.localizedDescription ?? "Failed to authenticate")
+                }
+            }
+        }
+    }
+
+    func showPasswords() {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
+        let viewController = storyboard.instantiateController(withIdentifier: "MainViewController") as! NSSplitViewController
+        self.view.window?.contentViewController = viewController
     }
 
     func unlockApp() {
         if let masterPassword = KeychainWrapper.standard.string(forKey: "MasterPassword") {
             if masterPassword == masterPasswordTextField.stringValue {
-                let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
-                let viewController = storyboard.instantiateController(withIdentifier: "MainViewController") as! NSSplitViewController
-                self.view.window?.contentViewController = viewController
+                showPasswords()
             } else {
                 self.view.window?.shakeWindow()
             }
