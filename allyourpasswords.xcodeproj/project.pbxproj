@@ -16,6 +16,10 @@
 		E842BCA621F14D2E00B131F2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */; };
 		E8953AF021F11D1000BBB89E /* CustomTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */; };
 		E8953AF221F11D7300BBB89E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8953AF121F11D7300BBB89E /* Database.swift */; };
+		E8F313BE21F2997E00373C79 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F313BD21F2997E00373C79 /* EditViewController.swift */; };
+		E8F313C021F299F900373C79 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F313BF21F299F900373C79 /* ContainerViewController.swift */; };
+		E8F313C221F3953600373C79 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F313C121F3953600373C79 /* EmptyViewController.swift */; };
+		E8F313C621F3C2D100373C79 /* BorderedNSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F313C521F3C2D100373C79 /* BorderedNSView.swift */; };
 		E8F7CC3C21F2339E00F11AB6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F7CC3B21F2339E00F11AB6 /* TableViewController.swift */; };
 		E8F7CC3E21F233F400F11AB6 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F7CC3D21F233F400F11AB6 /* Login.swift */; };
 		E8F7CC4021F238E900F11AB6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F7CC3F21F238E900F11AB6 /* DetailViewController.swift */; };
@@ -36,6 +40,10 @@
 		E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldCell.swift; sourceTree = "<group>"; };
 		E8953AF121F11D7300BBB89E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		E8F313BD21F2997E00373C79 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		E8F313BF21F299F900373C79 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		E8F313C121F3953600373C79 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
+		E8F313C521F3C2D100373C79 /* BorderedNSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedNSView.swift; sourceTree = "<group>"; };
 		E8F7CC3B21F2339E00F11AB6 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E8F7CC3D21F233F400F11AB6 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		E8F7CC3F21F238E900F11AB6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -101,18 +109,22 @@
 				E8F939E421F118FE004EFBB2 /* allyourpasswords.entitlements */,
 				E8F939E321F118FE004EFBB2 /* Info.plist */,
 				E8F939DA21F118FD004EFBB2 /* AppDelegate.swift */,
+				E8F313BF21F299F900373C79 /* ContainerViewController.swift */,
 				E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */,
 				E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */,
 				E8953AF121F11D7300BBB89E /* Database.swift */,
+				E8F7CC3F21F238E900F11AB6 /* DetailViewController.swift */,
+				E8F313BD21F2997E00373C79 /* EditViewController.swift */,
+				E8F313C121F3953600373C79 /* EmptyViewController.swift */,
 				E8F7CC3D21F233F400F11AB6 /* Login.swift */,
 				E812AC7321F132F100EF6386 /* MainViewController.swift */,
 				E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */,
 				E8F7CC3B21F2339E00F11AB6 /* TableViewController.swift */,
-				E8F7CC3F21F238E900F11AB6 /* DetailViewController.swift */,
 				E812AC7121F1288800EF6386 /* UnlockViewController.swift */,
 				E8F939DE21F118FE004EFBB2 /* Assets.xcassets */,
 				E812AC6A21F1246C00EF6386 /* KeychainWrapper */,
 				E8F939E021F118FE004EFBB2 /* Main.storyboard */,
+				E8F313C521F3C2D100373C79 /* BorderedNSView.swift */,
 			);
 			path = allyourpasswords;
 			sourceTree = "<group>";
@@ -246,7 +258,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8F313BE21F2997E00373C79 /* EditViewController.swift in Sources */,
 				E842BCA621F14D2E00B131F2 /* CustomTableViewCell.swift in Sources */,
+				E8F313C621F3C2D100373C79 /* BorderedNSView.swift in Sources */,
+				E8F313C021F299F900373C79 /* ContainerViewController.swift in Sources */,
 				E812AC7221F1288800EF6386 /* UnlockViewController.swift in Sources */,
 				E8953AF021F11D1000BBB89E /* CustomTextFieldCell.swift in Sources */,
 				E8F7CC4021F238E900F11AB6 /* DetailViewController.swift in Sources */,
@@ -256,6 +271,7 @@
 				E812AC6C21F1248300EF6386 /* KeychainItemAccessibility.swift in Sources */,
 				E812AC7021F1263800EF6386 /* SetMasterPasswordViewController.swift in Sources */,
 				E8F939DB21F118FD004EFBB2 /* AppDelegate.swift in Sources */,
+				E8F313C221F3953600373C79 /* EmptyViewController.swift in Sources */,
 				E8F7CC3E21F233F400F11AB6 /* Login.swift in Sources */,
 				E812AC7421F132F100EF6386 /* MainViewController.swift in Sources */,
 			);

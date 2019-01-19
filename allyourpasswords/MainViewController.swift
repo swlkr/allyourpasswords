@@ -15,9 +15,10 @@ class MainViewController : NSSplitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let detailViewController = rightSplit.viewController as? DetailViewController
+        let containerViewController = rightSplit.viewController as? ContainerViewController
         let tableViewController = leftSplit.viewController as? TableViewController
 
-        tableViewController?.detailViewController = detailViewController
+        tableViewController?.containerViewController = containerViewController
+        containerViewController?.tableView = tableViewController?.tableView
     }
 }

@@ -19,7 +19,7 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
     var row : Row? = nil
     var db : Connection? = nil
     let login = Login()
-    var detailViewController : DetailViewController? = nil
+    var containerViewController : ContainerViewController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +29,19 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
         searchField.delegate = self
 
         db = Database.open()
+
+        reloadTableView()
+
+        if (filteredRows?.count)! > 0 {
+            tableView.selectRowIndexes(NSIndexSet(index: 0) as IndexSet, byExtendingSelection: false)
+        } else {
+            containerViewController?.showEmptyViewController()
+        }
+    }
+
+    func reloadTableView() {
         rows = Array((try! db?.prepare(login.table))!)
         filteredRows = rows
-
         tableView.reloadData()
     }
 
@@ -85,11 +95,12 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
         let rowIndex = tableView.selectedRow
 
         if rowIndex > -1, rowIndex < filteredRows?.count ?? 0, let row = filteredRows?[rowIndex] {
-            detailViewController?.row = row
+            containerViewController?.row = row
+            containerViewController?.showDetailViewController()
         }
-
     }
-    
+
     @IBAction func addButtonClicked(_ sender: NSButton) {
+        containerViewController?.showEditViewController()
     }
 }
