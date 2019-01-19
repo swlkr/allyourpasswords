@@ -58,6 +58,7 @@ class ContainerViewController : NSViewController {
 
         let vc = storyboard.instantiateController(withIdentifier: "DetailViewController") as! DetailViewController
         vc.row = row
+        vc.tableViewController = tableViewController
         
         addChild(vc)
         vc.view.frame = containerView.bounds
@@ -72,6 +73,7 @@ class ContainerViewController : NSViewController {
         }
 
         let vc = storyboard.instantiateController(withIdentifier: "EmptyViewController") as! EmptyViewController
+        vc.tableViewController = tableViewController
 
         addChild(vc)
         vc.view.frame = containerView.bounds
@@ -96,8 +98,13 @@ class ContainerViewController : NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if (tableViewController?.filteredRows?.count ?? 0 > 0) {
-            row = tableViewController?.filteredRows?[0]
+        let db = Database.open()
+        let login = Login()
+        let rowCount = try! db?.scalar(login.table.count)
+        let firstRow = try! db?.pluck(login.table.limit(0).order(login.id))
+
+        if (rowCount! > 0) {
+            row = firstRow
             showDetailViewController()
         } else {
             showEmptyViewController()

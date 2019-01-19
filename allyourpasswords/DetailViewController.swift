@@ -13,6 +13,7 @@ class DetailViewController : NSViewController {
 
     var row : Row?
     let login = Login()
+    var tableViewController : TableViewController?
     @IBOutlet weak var nameOrUrl: NSTextField!
     @IBOutlet weak var favicon: NSImageView!
     @IBOutlet weak var email: NSTextField!

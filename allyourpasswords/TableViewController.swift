@@ -106,18 +106,32 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
         containerViewController?.showEditViewController()
     }
 
+    func dialogOKCancel(question: String, text: String) -> Bool {
+        let alert = NSAlert()
+        alert.messageText = question
+        alert.informativeText = text
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: "Cancel")
+        return alert.runModal() == .alertFirstButtonReturn
+    }
+
     @IBAction func deleteLogin(_ sender: NSMenuItem) {
-        do {
-            let indices = tableView.selectedRowIndexes
-            let ids = indices.compactMap { (filteredRows?.count ?? -1 > $0) ? filteredRows?[$0][login.id] : nil}
-            let lg = login.table.filter(ids.contains(login.id))
-            if try db?.run(lg.delete()) ?? 0 > 0 {
-                reloadTableView()
-            } else {
-                print("login not found")
+        let indices = tableView.selectedRowIndexes
+        let ids = indices.compactMap { (filteredRows?.count ?? -1 > $0) ? filteredRows?[$0][login.id] : nil}
+        let answer = dialogOKCancel(question: "Are you sure you want to delete \(ids.count) login(s)?", text: "")
+
+        if answer == true {
+            do {
+                let lg = login.table.filter(ids.contains(login.id))
+                if try db?.run(lg.delete()) ?? 0 > 0 {
+                    reloadTableView()
+                } else {
+                    print("login not found")
+                }
+            } catch {
+                print("delete failed: \(error)")
             }
-        } catch {
-            print("delete failed: \(error)")
         }
     }
 }

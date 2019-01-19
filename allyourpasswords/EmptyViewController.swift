@@ -9,6 +9,9 @@
 import Cocoa
 
 class EmptyViewController : NSViewController {
+
+    var tableViewController : TableViewController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,6 +25,7 @@ class EmptyViewController : NSViewController {
         }
 
         let vc = storyboard.instantiateController(withIdentifier: "EditViewController") as! EditViewController
+        vc.tableViewController = tableViewController
 
         container.addChild(vc)
         vc.view.frame = container.containerView.bounds
