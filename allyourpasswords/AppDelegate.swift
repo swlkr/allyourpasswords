@@ -43,6 +43,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
+    @IBAction func addNewLogin(_ sender: NSMenuItem) {
+        print("AppDelegate:actionMenuItemSelected")
+    }
 
+    @IBAction func deleteLogin(_ sender: NSMenuItem) {
+        print("AppDelegate:deleteLogin")
+    }
 }
 

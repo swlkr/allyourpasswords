@@ -31,18 +31,20 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
         db = Database.open()
 
         reloadTableView()
-
-        if (filteredRows?.count)! > 0 {
-            tableView.selectRowIndexes(NSIndexSet(index: 0) as IndexSet, byExtendingSelection: false)
-        } else {
-            containerViewController?.showEmptyViewController()
-        }
     }
 
     func reloadTableView() {
         rows = Array((try! db?.prepare(login.table))!)
         filteredRows = rows
         tableView.reloadData()
+
+        if (filteredRows?.count)! > 0 {
+            tableView.selectRowIndexes(NSIndexSet(index: 0) as IndexSet, byExtendingSelection: false)
+            containerViewController?.row = rows?[0]
+            containerViewController?.showDetailViewController()
+        } else {
+            containerViewController?.showEmptyViewController()
+        }
     }
 
     func controlTextDidChange(_ obj: Notification) {
@@ -73,9 +75,9 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
         return filteredRows?.count ?? 0
     }
 
-//    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-//        return 50
-//    }
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 64
+    }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "CustomTableCellView"), owner: self) as? CustomTableCellView
@@ -102,5 +104,20 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
 
     @IBAction func addButtonClicked(_ sender: NSButton) {
         containerViewController?.showEditViewController()
+    }
+
+    @IBAction func deleteLogin(_ sender: NSMenuItem) {
+        do {
+            let indices = tableView.selectedRowIndexes
+            let ids = indices.compactMap { (filteredRows?.count ?? -1 > $0) ? filteredRows?[$0][login.id] : nil}
+            let lg = login.table.filter(ids.contains(login.id))
+            if try db?.run(lg.delete()) ?? 0 > 0 {
+                reloadTableView()
+            } else {
+                print("login not found")
+            }
+        } catch {
+            print("delete failed: \(error)")
+        }
     }
 }

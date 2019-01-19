@@ -13,7 +13,7 @@ class EditViewController : NSViewController {
 
     var row : Row?
     let login = Login()
-    var tableView : NSTableView?
+    var tableViewController : TableViewController?
 
     @IBOutlet weak var emailTextField: NSTextField!
     @IBOutlet weak var usernameTextField: NSTextField!
@@ -62,7 +62,7 @@ class EditViewController : NSViewController {
             row = try! db?.pluck(login.table.filter(login.id == row?[login.id] ?? -1))
         }
 
-        tableView?.reloadData()
+        tableViewController?.reloadTableView()
 
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
         let vc = storyboard.instantiateController(withIdentifier: "DetailViewController") as! DetailViewController
@@ -81,17 +81,33 @@ class EditViewController : NSViewController {
 
     @IBAction func cancelButtonClicked(_ sender: NSButton) {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
-        let vc = storyboard.instantiateController(withIdentifier: "DetailViewController") as! DetailViewController
-        vc.row = row
+        let db = Database.open()
+        let rows = try! db?.scalar(login.table.count) ?? 0
+        if rows > 0 {
+            let vc = storyboard.instantiateController(withIdentifier: "DetailViewController") as! DetailViewController
+            vc.row = row
 
-        let container = self.parent as! ContainerViewController
+            let container = self.parent as! ContainerViewController
 
-        for sView in container.containerView.subviews {
-            sView.removeFromSuperview()
+            for sView in container.containerView.subviews {
+                sView.removeFromSuperview()
+            }
+
+            container.addChild(vc)
+            vc.view.frame = container.containerView.bounds
+            container.containerView.addSubview(vc.view)
+        } else {
+            let vc = storyboard.instantiateController(withIdentifier: "EmptyViewController") as! EmptyViewController
+
+            let container = self.parent as! ContainerViewController
+
+            for sView in container.containerView.subviews {
+                sView.removeFromSuperview()
+            }
+
+            container.addChild(vc)
+            vc.view.frame = container.containerView.bounds
+            container.containerView.addSubview(vc.view)
         }
-
-        container.addChild(vc)
-        vc.view.frame = container.containerView.bounds
-        container.containerView.addSubview(vc.view)
     }
 }

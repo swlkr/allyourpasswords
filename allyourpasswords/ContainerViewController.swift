@@ -12,7 +12,7 @@ import SQLite
 class ContainerViewController : NSViewController {
 
     var row : Row?
-    var tableView : NSTableView?
+    var tableViewController : TableViewController?
 
     @IBOutlet weak var containerView: NSView!
 
@@ -86,6 +86,7 @@ class ContainerViewController : NSViewController {
         }
 
         let vc = storyboard.instantiateController(withIdentifier: "EditViewController") as! EditViewController
+        vc.tableViewController = tableViewController
 
         addChild(vc)
         vc.view.frame = containerView.bounds
@@ -94,5 +95,16 @@ class ContainerViewController : NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if (tableViewController?.filteredRows?.count ?? 0 > 0) {
+            row = tableViewController?.filteredRows?[0]
+            showDetailViewController()
+        } else {
+            showEmptyViewController()
+        }
+    }
+
+    @IBAction func addNewLogin(_ sender: NSMenuItem) {
+        showEditViewController()
     }
 }
