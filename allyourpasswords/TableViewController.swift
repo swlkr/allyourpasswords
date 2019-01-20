@@ -24,6 +24,8 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: NSNotification.Name(rawValue: "reloadTableView"), object: nil)
+
         tableView.delegate = self
         tableView.dataSource = self
         searchField.delegate = self
@@ -33,7 +35,7 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
         reloadTableView()
     }
 
-    func reloadTableView() {
+    @objc func reloadTableView() {
         rows = Array((try! db?.prepare(login.table))!)
         filteredRows = rows
         tableView.reloadData()
@@ -41,8 +43,10 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
         if (filteredRows?.count)! > 0 {
             tableView.selectRowIndexes(NSIndexSet(index: 0) as IndexSet, byExtendingSelection: false)
             containerViewController?.row = rows?[0]
+            containerViewController?.tableViewController = self
             containerViewController?.showDetailViewController()
         } else {
+            containerViewController?.tableViewController = self
             containerViewController?.showEmptyViewController()
         }
     }
@@ -98,6 +102,7 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
 
         if rowIndex > -1, rowIndex < filteredRows?.count ?? 0, let row = filteredRows?[rowIndex] {
             containerViewController?.row = row
+            containerViewController?.tableViewController = self
             containerViewController?.showDetailViewController()
         }
     }

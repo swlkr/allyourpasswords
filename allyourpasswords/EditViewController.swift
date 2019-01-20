@@ -62,7 +62,9 @@ class EditViewController : NSViewController {
             row = try! db?.pluck(login.table.filter(login.id == row?[login.id] ?? -1))
         }
 
-        tableViewController?.reloadTableView()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTableView"), object: nil)
+
+        //tableViewController?.reloadTableView()
 
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
         let vc = storyboard.instantiateController(withIdentifier: "DetailViewController") as! DetailViewController
@@ -86,6 +88,7 @@ class EditViewController : NSViewController {
         if rows > 0 {
             let vc = storyboard.instantiateController(withIdentifier: "DetailViewController") as! DetailViewController
             vc.row = row
+            vc.tableViewController = tableViewController
 
             let container = self.parent as! ContainerViewController
 
@@ -98,6 +101,7 @@ class EditViewController : NSViewController {
             container.containerView.addSubview(vc.view)
         } else {
             let vc = storyboard.instantiateController(withIdentifier: "EmptyViewController") as! EmptyViewController
+            vc.tableViewController = tableViewController
 
             let container = self.parent as! ContainerViewController
 

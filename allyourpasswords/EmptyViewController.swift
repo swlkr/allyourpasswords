@@ -24,6 +24,8 @@ class EmptyViewController : NSViewController {
             sView.removeFromSuperview()
         }
 
+        container.tableViewController = tableViewController
+
         let vc = storyboard.instantiateController(withIdentifier: "EditViewController") as! EditViewController
         vc.tableViewController = tableViewController
 

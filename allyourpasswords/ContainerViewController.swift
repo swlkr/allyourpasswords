@@ -16,39 +16,6 @@ class ContainerViewController : NSViewController {
 
     @IBOutlet weak var containerView: NSView!
 
-    override func viewWillAppear() {
-        super.viewWillAppear()
-
-//        let db = Database.open()
-//        let login = Login()
-//        let rowCount = try! db?.scalar(login.table.count)
-//
-//        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
-//
-//        for sView in containerView.subviews {
-//            sView.removeFromSuperview()
-//        }
-//
-//        if rowCount == 0 {
-//            let vc = storyboard.instantiateController(withIdentifier: "EmptyViewController") as! EmptyViewController
-//            addChild(vc)
-//            vc.view.frame = containerView.bounds
-//            containerView.addSubview(vc.view)
-//        } else if row == nil {
-//            let vc = storyboard.instantiateController(withIdentifier: "EditViewController") as! EditViewController
-//            vc.tableView = tableView
-//            addChild(vc)
-//            vc.view.frame = containerView.bounds
-//            containerView.addSubview(vc.view)
-//        } else {
-//            let vc = storyboard.instantiateController(withIdentifier: "DetailViewController") as! DetailViewController
-//            vc.row = row
-//            addChild(vc)
-//            vc.view.frame = containerView.bounds
-//            containerView.addSubview(vc.view)
-//        }
-    }
-
     func showDetailViewController() {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
 
@@ -96,8 +63,6 @@ class ContainerViewController : NSViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
         let db = Database.open()
         let login = Login()
         let rowCount = try! db?.scalar(login.table.count)
@@ -109,6 +74,8 @@ class ContainerViewController : NSViewController {
         } else {
             showEmptyViewController()
         }
+
+        super.viewDidLoad()
     }
 
     @IBAction func addNewLogin(_ sender: NSMenuItem) {

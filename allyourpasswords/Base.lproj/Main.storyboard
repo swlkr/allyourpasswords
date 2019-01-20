@@ -211,7 +211,7 @@ CA
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="58" y="105"/>
+            <point key="canvasLocation" x="-128" y="61"/>
         </scene>
         <!--Set Master Password View Controller-->
         <scene sceneID="4f6-ol-8V9">
