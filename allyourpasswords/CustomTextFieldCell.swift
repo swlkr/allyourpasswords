@@ -10,7 +10,7 @@ import Cocoa
 
 class CustomTextFieldCell: NSTextFieldCell {
 
-    private static let padding = CGSize(width: 4.0, height: 8.0)
+    private static let padding = CGSize(width: 4.0, height: 4.0)
 
     override func cellSize(forBounds rect: NSRect) -> NSSize {
         var size = super.cellSize(forBounds: rect)

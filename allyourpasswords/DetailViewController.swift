@@ -18,7 +18,7 @@ class DetailViewController : NSViewController {
     @IBOutlet weak var favicon: NSImageView!
     @IBOutlet weak var email: NSTextField!
     @IBOutlet weak var username: NSTextField!
-    @IBOutlet weak var password: NSTextField!
+    @IBOutlet weak var password: NSSecureTextField!
     @IBOutlet weak var toolbarView: NSView!
     
     override func viewDidLoad() {

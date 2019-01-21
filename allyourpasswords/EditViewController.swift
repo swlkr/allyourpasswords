@@ -20,6 +20,10 @@ class EditViewController : NSViewController {
     @IBOutlet weak var passwordTextField: NSTextField!
     @IBOutlet weak var websiteTextField: NSTextField!
     @IBOutlet weak var nameTextField: NSTextField!
+    @IBOutlet weak var passwordLengthLabel: NSTextField!
+    @IBOutlet weak var numberButton: NSButton!
+    @IBOutlet weak var symbolButton: NSButton!
+    @IBOutlet weak var passwordLengthSlider: NSSlider!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +32,20 @@ class EditViewController : NSViewController {
         usernameTextField.stringValue = row?[login.username] ?? ""
         passwordTextField.stringValue = row?[login.password] ?? ""
         websiteTextField.stringValue = row?[login.url] ?? ""
-        nameTextField.stringValue = row?[login.name] ?? "Login"
+        nameTextField.stringValue = row?[login.name] ?? ""
+
+        if row != nil {
+            passwordLengthLabel.stringValue = "\(passwordTextField.stringValue.count)"
+        } else {
+            passwordTextField.stringValue = randomString(passwordLengthSlider.integerValue)
+            passwordLengthLabel.stringValue = "\(passwordTextField.stringValue.count)"
+        }
+    }
+    @IBAction func websiteDidEndEditing(_ sender: NSTextField) {
+        let urlString = sender.stringValue
+        let url = URL(string: urlString)
+        let domain = url?.host
+        nameTextField.stringValue = domain ?? ""
     }
 
     @IBAction func saveButtonClicked(_ sender: NSButton) {
@@ -63,8 +80,6 @@ class EditViewController : NSViewController {
         }
 
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTableView"), object: nil)
-
-        //tableViewController?.reloadTableView()
 
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
         let vc = storyboard.instantiateController(withIdentifier: "DetailViewController") as! DetailViewController
@@ -113,5 +128,27 @@ class EditViewController : NSViewController {
             vc.view.frame = container.containerView.bounds
             container.containerView.addSubview(vc.view)
         }
+    }
+
+    func randomString(_ length: Int) -> String {
+        var numberValues = ""
+        if numberButton.state == .on {
+            numberValues = "123456790"
+        }
+
+        var symbolValues = ""
+        if symbolButton.state == .on {
+            symbolValues = "!@#$%^&*()-_"
+        }
+
+        let values = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\(numberValues)\(symbolValues)"
+        return String((0...length-1).map{ _ in values.randomElement()! })
+    }
+
+    @IBAction func sliderChanged(_ sender: NSSlider) {
+        let passwordLength = sender.integerValue
+        let password = randomString(passwordLength)
+        passwordLengthLabel.stringValue = "\(passwordLength)"
+        passwordTextField.stringValue = password
     }
 }
