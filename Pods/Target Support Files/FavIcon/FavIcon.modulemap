@@ -1,0 +1,6 @@
+framework module FavIcon {
+  umbrella header "FavIcon-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -92,7 +92,12 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
 
         cell?.nameOrUrl.stringValue = item[login.name] ?? item[login.url] ?? ""
         cell?.emailOrUsername.stringValue = item[login.email] ?? item[login.username] ?? ""
-        cell?.favicon.image = NSImage(named: "NSUser")
+        let path = NSSearchPathForDirectoriesInDomains(
+            .applicationSupportDirectory, .userDomainMask, true
+            ).first! + "/"
+        let str = "\(path)/\(item[login.id]).png"
+        let image = NSImage(contentsOfFile: str)
+        cell?.favicon.image = image
 
         return cell
     }

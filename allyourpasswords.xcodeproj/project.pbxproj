@@ -14,6 +14,7 @@
 		E812AC7221F1288800EF6386 /* UnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC7121F1288800EF6386 /* UnlockViewController.swift */; };
 		E812AC7421F132F100EF6386 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC7321F132F100EF6386 /* MainViewController.swift */; };
 		E842BCA621F14D2E00B131F2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */; };
+		E880587F21F571BD006B9055 /* NSImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E880587E21F571BD006B9055 /* NSImageExtensions.swift */; };
 		E8953AF021F11D1000BBB89E /* CustomTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */; };
 		E8953AF221F11D7300BBB89E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8953AF121F11D7300BBB89E /* Database.swift */; };
 		E8F313BE21F2997E00373C79 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F313BD21F2997E00373C79 /* EditViewController.swift */; };
@@ -37,6 +38,7 @@
 		E812AC7121F1288800EF6386 /* UnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewController.swift; sourceTree = "<group>"; };
 		E812AC7321F132F100EF6386 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		E880587E21F571BD006B9055 /* NSImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageExtensions.swift; sourceTree = "<group>"; };
 		E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldCell.swift; sourceTree = "<group>"; };
 		E8953AF121F11D7300BBB89E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		E8F313BD21F2997E00373C79 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				E8F313C121F3953600373C79 /* EmptyViewController.swift */,
 				E8F7CC3D21F233F400F11AB6 /* Login.swift */,
 				E812AC7321F132F100EF6386 /* MainViewController.swift */,
+				E880587E21F571BD006B9055 /* NSImageExtensions.swift */,
 				E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */,
 				E8F7CC3B21F2339E00F11AB6 /* TableViewController.swift */,
 				E812AC7121F1288800EF6386 /* UnlockViewController.swift */,
@@ -168,6 +171,11 @@
 				TargetAttributes = {
 					E8F939D621F118FD004EFBB2 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -211,6 +219,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FavIcon/FavIcon.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLCipher/SQLCipher.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 			);
@@ -218,6 +227,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FavIcon.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLCipher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 			);
@@ -261,6 +271,7 @@
 				E812AC7221F1288800EF6386 /* UnlockViewController.swift in Sources */,
 				E8953AF021F11D1000BBB89E /* CustomTextFieldCell.swift in Sources */,
 				E8F7CC4021F238E900F11AB6 /* DetailViewController.swift in Sources */,
+				E880587F21F571BD006B9055 /* NSImageExtensions.swift in Sources */,
 				E8F7CC3C21F2339E00F11AB6 /* TableViewController.swift in Sources */,
 				E8953AF221F11D7300BBB89E /* Database.swift in Sources */,
 				E812AC6E21F1249A00EF6386 /* KeychainWrapper.swift in Sources */,

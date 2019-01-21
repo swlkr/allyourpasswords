@@ -28,6 +28,13 @@ class DetailViewController : NSViewController {
         username.stringValue = row?[login.username] ?? "Click to add a username"
         nameOrUrl.stringValue = row?[login.name] ?? row?[login.url] ?? "Login"
         password.stringValue = row?[login.password] ?? "Click to add a password"
+
+        let path = NSSearchPathForDirectoriesInDomains(
+            .applicationSupportDirectory, .userDomainMask, true
+            ).first! + "/"
+        let str = "\(path)/\(row?[login.id] ?? 0).png"
+        let image = NSImage(contentsOfFile: str)
+        favicon.image = image
     }
 
     @IBAction func editButtonClicked(_ sender: NSButton) {

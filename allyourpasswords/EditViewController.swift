@@ -8,6 +8,7 @@
 
 import Cocoa
 import SQLite
+import FavIcon
 
 class EditViewController : NSViewController {
 
@@ -61,7 +62,7 @@ class EditViewController : NSViewController {
 
             try! db?.run(insert)
 
-            let query = login.table.order(login.id.desc)
+            let query = login.table.order(login.id.desc).limit(1)
 
             row = try! db?.pluck(query)
         } else {
@@ -77,6 +78,21 @@ class EditViewController : NSViewController {
             try! db?.run(update)
 
             row = try! db?.pluck(login.table.filter(login.id == row?[login.id] ?? -1))
+        }
+
+        do {
+            try FavIcon.downloadPreferred(row?[login.url] ?? "") { result in
+                if case let .success(image) = result {
+                    let path = NSSearchPathForDirectoriesInDomains(
+                        .applicationSupportDirectory, .userDomainMask, true
+                        ).first! + "/"
+                    let url = NSURL(fileURLWithPath: "\(path)/\(self.row?[self.login.id] ?? 0).png").filePathURL!
+                    print("url: \(url)")
+                    print(image.write(to: url, fileType: .png))
+                }
+            }
+        } catch {
+            print("Error: \(error)")
         }
 
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTableView"), object: nil)
