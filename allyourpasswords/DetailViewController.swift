@@ -52,5 +52,22 @@ class DetailViewController : NSViewController {
         vc.view.frame = container.containerView.bounds
         container.containerView.addSubview(vc.view)
     }
+
+    @IBAction func copyEmailClicked(_ sender: NSButton) {
+        let pasteBoard = NSPasteboard.general
+        pasteBoard.clearContents()
+        pasteBoard.setString(email.stringValue, forType: .string)
+    }
+
+    @IBAction func copyPasswordClicked(_ sender: NSButton) {
+        let pasteBoard = NSPasteboard.general
+        pasteBoard.clearContents()
+        pasteBoard.setString(password.stringValue, forType: .string)
+    }
     
+    @IBAction func copyUsernameClicked(_ sender: NSButton) {
+        let pasteBoard = NSPasteboard.general
+        pasteBoard.clearContents()
+        pasteBoard.setString(username.stringValue, forType: .string)
+    }
 }
