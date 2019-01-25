@@ -105,8 +105,9 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
     func tableViewSelectionDidChange(_ notification: Notification) {
         let rowIndex = tableView.selectedRow
 
-        if rowIndex > -1, rowIndex < filteredRows?.count ?? 0, let row = filteredRows?[rowIndex] {
-            containerViewController?.row = row
+        if rowIndex > -1, rowIndex < filteredRows?.count ?? 0 {
+            self.row = filteredRows?[rowIndex]
+            containerViewController?.row = self.row
             containerViewController?.tableViewController = self
             containerViewController?.showDetailViewController()
         }
@@ -142,6 +143,24 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
             } catch {
                 print("delete failed: \(error)")
             }
+        }
+    }
+
+    func copyToPasteBoard(_ string: String) {
+        let pasteBoard = NSPasteboard.general
+        pasteBoard.clearContents()
+        pasteBoard.setString(string, forType: .string)
+    }
+
+    @IBAction func copy(_ sender: NSMenuItem) {
+        copyToPasteBoard(row?[login.password] ?? "")
+    }
+
+    @IBAction func copyEmailOrUsername(_ sender: NSMenuItem) {
+        if row?[login.email] != nil {
+            copyToPasteBoard(row?[login.email] ?? "")
+        } else {
+            copyToPasteBoard(row?[login.username] ?? "")
         }
     }
 }

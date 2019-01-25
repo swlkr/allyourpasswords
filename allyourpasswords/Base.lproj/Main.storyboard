@@ -94,9 +94,14 @@
                                                 <action selector="cut:" target="Ady-hI-5gd" id="YJe-68-I9s"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Copy Email" keyEquivalent="b" id="Z2X-Xy-sFF">
+                                            <connections>
+                                                <action selector="copyEmailOrUsername:" target="Ady-hI-5gd" id="duh-Kh-8DG"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Copy" keyEquivalent="c" id="x3v-GG-iWU">
                                             <connections>
-                                                <action selector="copy:" target="Ady-hI-5gd" id="G1f-GL-Joy"/>
+                                                <action selector="copy:" target="Ady-hI-5gd" id="otH-TA-eru"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Paste" keyEquivalent="v" id="gVA-U4-sdL">
@@ -194,7 +199,7 @@ CA
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="-175" y="-639"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
