@@ -14,14 +14,14 @@ public struct Database {
             .applicationSupportDirectory, .userDomainMask, true
             ).first! + "/"
 
-        print(path)
-
         do {
             try FileManager.default.createDirectory(
                 atPath: path, withIntermediateDirectories: true, attributes: nil
             )
         } catch {
+            #if DEBUG
             print("Unexpected error: \(error).")
+            #endif
         }
 
         var conn : Connection?
@@ -35,7 +35,9 @@ public struct Database {
             conn?.trace { print($0) }
             #endif
         } catch {
+            #if DEBUG
             print("Unexpected error: \(error).")
+            #endif
         }
 
         return conn

@@ -87,8 +87,7 @@ class EditViewController : NSViewController {
                         .applicationSupportDirectory, .userDomainMask, true
                         ).first! + "/"
                     let url = NSURL(fileURLWithPath: "\(path)/\(self.row?[self.login.id] ?? 0).png").filePathURL!
-                    print("url: \(url)")
-                    print(image.write(to: url, fileType: .png))
+                    image.write(to: url, fileType: .png)
                 }
             }
         } catch {
