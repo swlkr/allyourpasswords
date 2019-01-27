@@ -13,23 +13,26 @@ class ContainerViewController : NSViewController {
 
     var row : Row?
     var tableViewController : TableViewController?
+    var detailViewController: DetailViewController?
 
     @IBOutlet weak var containerView: NSView!
 
     func showDetailViewController() {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
 
-        for sView in containerView.subviews {
-            sView.removeFromSuperview()
+        if let oldViewController = detailViewController {
+            oldViewController.view.removeFromSuperview()
+            oldViewController.removeFromParent()
+            detailViewController = nil
         }
 
-        let vc = storyboard.instantiateController(withIdentifier: "DetailViewController") as! DetailViewController
-        vc.row = row
-        vc.tableViewController = tableViewController
+        detailViewController = storyboard.instantiateController(withIdentifier: "DetailViewController") as? DetailViewController
+        detailViewController!.row = row
+        detailViewController!.tableViewController = tableViewController
         
-        addChild(vc)
-        vc.view.frame = containerView.bounds
-        containerView.addSubview(vc.view)
+        addChild(detailViewController!)
+        detailViewController!.view.frame = containerView.bounds
+        containerView.addSubview(detailViewController!.view)
     }
 
     func showEmptyViewController() {
