@@ -157,7 +157,7 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
     }
 
     @IBAction func copyEmailOrUsername(_ sender: NSMenuItem) {
-        if row?[login.email] != nil {
+        if row?[login.email] != nil && row?[login.email] != "" {
             copyToPasteBoard(row?[login.email] ?? "")
         } else {
             copyToPasteBoard(row?[login.username] ?? "")

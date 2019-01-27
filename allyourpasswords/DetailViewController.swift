@@ -20,14 +20,28 @@ class DetailViewController : NSViewController {
     @IBOutlet weak var username: NSTextField!
     @IBOutlet weak var password: NSSecureTextField!
     @IBOutlet weak var toolbarView: NSView!
+    @IBOutlet weak var plaintText: NSTextField!
+    @IBOutlet weak var showButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        email.stringValue = row?[login.email] ?? "Click to add an email"
-        username.stringValue = row?[login.username] ?? "Click to add a username"
-        nameOrUrl.stringValue = row?[login.name] ?? row?[login.url] ?? "Login"
-        password.stringValue = row?[login.password] ?? "Click to add a password"
+        let emailValue = row?[login.email]
+        if emailValue?.count ?? 0 > 0 {
+            email.stringValue = emailValue!
+        } else {
+            email.stringValue = "---"
+        }
+
+        let usernameValue = row?[login.username]
+        if usernameValue?.count ?? 0 > 0 {
+            username.stringValue = usernameValue!
+        } else {
+            username.stringValue = "---"
+        }
+
+        nameOrUrl.stringValue = row?[login.name] ?? row?[login.url] ?? "---"
+        password.stringValue = row?[login.password] ?? "---"
 
         let path = NSSearchPathForDirectoriesInDomains(
             .applicationSupportDirectory, .userDomainMask, true
@@ -69,5 +83,15 @@ class DetailViewController : NSViewController {
     
     @IBAction func copyUsernameClicked(_ sender: NSButton) {
         copyToPasteBoard(username.stringValue)
+    }
+    @IBAction func showButtonClicked(_ sender: NSButton) {
+        plaintText.stringValue = password.stringValue
+        plaintText.isHidden = !plaintText.isHidden
+        password.isHidden = !password.isHidden
+        if plaintText.isHidden {
+            showButton.title = "Show"
+        } else {
+            showButton.title = "Hide"
+        }
     }
 }
