@@ -36,17 +36,16 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
     }
 
     @objc func reloadTableView() {
-        rows = Array((try! db?.prepare(login.table))!)
+        let query = login.table.order(login.name, login.url)
+        rows = Array((try! db?.prepare(query))!)
         filteredRows = rows
         tableView.reloadData()
 
         if (filteredRows?.count)! > 0 {
             tableView.selectRowIndexes(NSIndexSet(index: 0) as IndexSet, byExtendingSelection: false)
             containerViewController?.row = rows?[0]
-            containerViewController?.tableViewController = self
             containerViewController?.showDetailViewController()
         } else {
-            containerViewController?.tableViewController = self
             containerViewController?.showEmptyViewController()
         }
     }
@@ -95,7 +94,9 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
         let path = NSSearchPathForDirectoriesInDomains(
             .applicationSupportDirectory, .userDomainMask, true
             ).first! + "/"
-        let str = "\(path)/\(item[login.id]).png"
+        let url = URL(string: item[login.url]!)
+        let domain = url?.host
+        let str = "\(path)/\(domain ?? "").png"
         let image = NSImage(contentsOfFile: str)
         cell?.favicon.image = image
 
@@ -108,12 +109,13 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
         if rowIndex > -1, rowIndex < filteredRows?.count ?? 0 {
             self.row = filteredRows?[rowIndex]
             containerViewController?.row = self.row
-            containerViewController?.tableViewController = self
             containerViewController?.showDetailViewController()
         }
     }
 
     @IBAction func addButtonClicked(_ sender: NSButton) {
+        containerViewController?.row = nil
+        containerViewController?.anyRows = filteredRows?.count ?? 0 > 0
         containerViewController?.showEditViewController()
     }
 

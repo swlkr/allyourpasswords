@@ -13,7 +13,6 @@ class DetailViewController : NSViewController {
 
     var row : Row?
     let login = Login()
-    var tableViewController : TableViewController?
     @IBOutlet weak var nameOrUrl: NSTextField!
     @IBOutlet weak var favicon: NSImageView!
     @IBOutlet weak var email: NSTextField!
@@ -46,25 +45,17 @@ class DetailViewController : NSViewController {
         let path = NSSearchPathForDirectoriesInDomains(
             .applicationSupportDirectory, .userDomainMask, true
             ).first! + "/"
-        let str = "\(path)/\(row?[login.id] ?? 0).png"
+        let url = URL(string: row?[login.url] ?? "")
+        let domain = url?.host
+        let str = "\(path)/\(domain ?? "").png"
         let image = NSImage(contentsOfFile: str)
         favicon.image = image
     }
 
     @IBAction func editButtonClicked(_ sender: NSButton) {
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
-        let vc = storyboard.instantiateController(withIdentifier: "EditViewController") as! EditViewController
-        vc.row = row
-
         let container = self.parent as! ContainerViewController
-
-        for sView in container.containerView.subviews {
-            sView.removeFromSuperview()
-        }
-
-        container.addChild(vc)
-        vc.view.frame = container.containerView.bounds
-        container.containerView.addSubview(vc.view)
+        container.row = row
+        container.showEditViewController()
     }
 
     func copyToPasteBoard(_ string: String) {

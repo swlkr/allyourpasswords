@@ -14,7 +14,7 @@ class EditViewController : NSViewController {
 
     var row : Row?
     let login = Login()
-    var tableViewController : TableViewController?
+    var anyRows : Bool?
 
     @IBOutlet weak var emailTextField: NSTextField!
     @IBOutlet weak var usernameTextField: NSTextField!
@@ -47,6 +47,21 @@ class EditViewController : NSViewController {
         let url = URL(string: urlString)
         let domain = url?.host
         nameTextField.stringValue = domain ?? ""
+
+        do {
+            try FavIcon.downloadPreferred(url?.absoluteString ?? "") { result in
+                if case let .success(image) = result {
+                    let path = NSSearchPathForDirectoriesInDomains(
+                        .applicationSupportDirectory, .userDomainMask, true
+                        ).first! + "/"
+                    let url = NSURL(fileURLWithPath: "\(path)/\(domain!).png").filePathURL!
+                    image.write(to: url, fileType: .png)
+                }
+            }
+        } catch {
+            print("Error: \(error)")
+
+        }
     }
 
     @IBAction func saveButtonClicked(_ sender: NSButton) {
@@ -80,68 +95,21 @@ class EditViewController : NSViewController {
             row = try! db?.pluck(login.table.filter(login.id == row?[login.id] ?? -1))
         }
 
-        do {
-            try FavIcon.downloadPreferred(row?[login.url] ?? "") { result in
-                if case let .success(image) = result {
-                    let path = NSSearchPathForDirectoriesInDomains(
-                        .applicationSupportDirectory, .userDomainMask, true
-                        ).first! + "/"
-                    let url = NSURL(fileURLWithPath: "\(path)/\(self.row?[self.login.id] ?? 0).png").filePathURL!
-                    image.write(to: url, fileType: .png)
-                }
-            }
-        } catch {
-            print("Error: \(error)")
-        }
+        let container = self.parent as! ContainerViewController
+        container.row = self.row
+        container.showDetailViewController()
 
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTableView"), object: nil)
-
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
-        let vc = storyboard.instantiateController(withIdentifier: "DetailViewController") as! DetailViewController
-        vc.row = row
-
-        let container = self.parent as! ContainerViewController
-
-        for sView in container.containerView.subviews {
-            sView.removeFromSuperview()
-        }
-
-        container.addChild(vc)
-        vc.view.frame = container.containerView.bounds
-        container.containerView?.addSubview(vc.view)
     }
 
     @IBAction func cancelButtonClicked(_ sender: NSButton) {
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
-        let db = Database.open()
-        let rows = try! db?.scalar(login.table.count) ?? 0
-        if rows > 0 {
-            let vc = storyboard.instantiateController(withIdentifier: "DetailViewController") as! DetailViewController
-            vc.row = row
-            vc.tableViewController = tableViewController
+        let container = self.parent as! ContainerViewController
 
-            let container = self.parent as! ContainerViewController
-
-            for sView in container.containerView.subviews {
-                sView.removeFromSuperview()
-            }
-
-            container.addChild(vc)
-            vc.view.frame = container.containerView.bounds
-            container.containerView.addSubview(vc.view)
+        if anyRows == true {
+            container.row = row
+            container.showDetailViewController()
         } else {
-            let vc = storyboard.instantiateController(withIdentifier: "EmptyViewController") as! EmptyViewController
-            vc.tableViewController = tableViewController
-
-            let container = self.parent as! ContainerViewController
-
-            for sView in container.containerView.subviews {
-                sView.removeFromSuperview()
-            }
-
-            container.addChild(vc)
-            vc.view.frame = container.containerView.bounds
-            container.containerView.addSubview(vc.view)
+            container.showEmptyViewController()
         }
     }
 

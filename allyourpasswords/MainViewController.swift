@@ -19,6 +19,5 @@ class MainViewController : NSSplitViewController {
         let tableViewController = leftSplit.viewController as? TableViewController
 
         tableViewController?.containerViewController = containerViewController
-        containerViewController?.tableViewController = tableViewController
     }
 }
