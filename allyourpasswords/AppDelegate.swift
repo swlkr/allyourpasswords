@@ -44,19 +44,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func addNewLogin(_ sender: NSMenuItem) {
-        print("AppDelegate:actionMenuItemSelected")
     }
 
     @IBAction func deleteLogin(_ sender: NSMenuItem) {
-        print("AppDelegate:deleteLogin")
     }
 
     @IBAction func copy(_ sender: NSMenuItem) {
-        print("AppDelegate:copy")
     }
 
     @IBAction func copyEmailOrUsername(_ sender: NSMenuItem) {
-        print("AppDelegate:copyEmailOrUsername")
     }
 }
 
