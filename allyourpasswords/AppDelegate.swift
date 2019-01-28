@@ -54,5 +54,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBAction func copyEmailOrUsername(_ sender: NSMenuItem) {
     }
+
+    @IBAction func copyPassword(_ sender: NSMenuItem) {
+    }
 }
 

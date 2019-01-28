@@ -67,11 +67,11 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
             filteredRows = rows
         }
 
+        tableView.reloadData()
+
         if(filteredRows?.count == 1) {
             tableView.selectRowIndexes(NSIndexSet(index: 0) as IndexSet, byExtendingSelection: false)
         }
-
-        tableView.reloadData()
     }
 
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -164,5 +164,9 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
         } else {
             copyToPasteBoard(row?[login.username] ?? "")
         }
+    }
+
+    @IBAction func copyPassword(_ sender: NSMenuItem) {
+        copyToPasteBoard(row?[login.password] ?? "")
     }
 }

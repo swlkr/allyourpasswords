@@ -99,6 +99,11 @@
                                                 <action selector="copyEmailOrUsername:" target="Ady-hI-5gd" id="duh-Kh-8DG"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Copy Password" keyEquivalent="d" id="wKP-D4-aMc">
+                                            <connections>
+                                                <action selector="copyPassword:" target="Ady-hI-5gd" id="bGB-Nk-FqT"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Copy" keyEquivalent="c" id="x3v-GG-iWU">
                                             <connections>
                                                 <action selector="copy:" target="Ady-hI-5gd" id="otH-TA-eru"/>
