@@ -238,7 +238,7 @@ CA
                                     <constraint firstAttribute="height" constant="40" id="3pm-5R-8Ly"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" drawsBackground="YES" id="2Yn-3j-V3b" customClass="CustomTextFieldCell" customModule="allyourpasswords" customModuleProvider="target">
-                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <font key="font" metaFont="system" size="22"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
