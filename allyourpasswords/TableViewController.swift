@@ -14,12 +14,12 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
     @IBOutlet weak var searchField: NSSearchField!
     @IBOutlet weak var addButton: NSButton!
 
-    var rows : [Row]? = []
-    var filteredRows : [Row]? = []
-    var row : Row? = nil
-    var db : Connection? = nil
+    var rows : [Row]?
+    var filteredRows : [Row]?
+    var row : Row?
+    var db : Connection?
     let login = Login()
-    var containerViewController : ContainerViewController? = nil
+    var containerViewController : ContainerViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,11 +89,21 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
             return nil
         }
 
-        cell?.nameOrUrl.stringValue = item[login.name] ?? item[login.url] ?? ""
-        cell?.emailOrUsername.stringValue = item[login.email] ?? item[login.username] ?? ""
+        if item[login.name]?.count ?? 0 > 0 {
+            cell?.nameOrUrl.stringValue = item[login.name] ?? ""
+        } else {
+            cell?.nameOrUrl.stringValue = item[login.url] ?? ""
+        }
+
+        if item[login.email]?.count ?? 0 > 0 {
+            cell?.emailOrUsername.stringValue = item[login.email] ?? ""
+        } else {
+            cell?.emailOrUsername.stringValue = item[login.username] ?? ""
+        }
+
         let path = NSSearchPathForDirectoriesInDomains(
             .applicationSupportDirectory, .userDomainMask, true
-            ).first! + "/"
+            ).first! + "/"  + Bundle.main.bundleIdentifier!
         let url = URL(string: item[login.url]!)
         let domain = url?.host
         let str = "\(path)/\(domain ?? "").png"
@@ -114,8 +124,8 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
     }
 
     @IBAction func addButtonClicked(_ sender: NSButton) {
-        containerViewController?.row = nil
-        containerViewController?.anyRows = filteredRows?.count ?? 0 > 0
+        containerViewController?.row = row
+        containerViewController?.isNew = true
         containerViewController?.showEditViewController()
     }
 

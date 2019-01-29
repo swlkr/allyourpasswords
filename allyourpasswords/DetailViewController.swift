@@ -26,25 +26,36 @@ class DetailViewController : NSViewController {
         super.viewDidLoad()
 
         let emailValue = row?[login.email]
-        if emailValue?.count ?? 0 > 0 {
-            email.stringValue = emailValue!
-        } else {
+        if (emailValue ?? "").isEmpty {
             email.stringValue = "---"
+        } else {
+            email.stringValue = emailValue!
         }
 
         let usernameValue = row?[login.username]
-        if usernameValue?.count ?? 0 > 0 {
-            username.stringValue = usernameValue!
-        } else {
+        if (usernameValue ?? "").isEmpty {
             username.stringValue = "---"
+        } else {
+            username.stringValue = usernameValue!
         }
 
-        nameOrUrl.stringValue = row?[login.name] ?? row?[login.url] ?? "---"
-        password.stringValue = row?[login.password] ?? "---"
+        let nameValue = row?[login.name]
+        if (nameValue ?? "").isEmpty {
+            nameOrUrl.stringValue = row?[login.url] ?? "---"
+        } else {
+            nameOrUrl.stringValue = nameValue!
+        }
+
+        let passwordValue = row?[login.password]
+        if (passwordValue ?? "").isEmpty {
+            password.stringValue = "---"
+        } else {
+            password.stringValue = row?[login.password] ?? ""
+        }
 
         let path = NSSearchPathForDirectoriesInDomains(
             .applicationSupportDirectory, .userDomainMask, true
-            ).first! + "/"
+            ).first! + "/"  + Bundle.main.bundleIdentifier!
         let url = URL(string: row?[login.url] ?? "")
         let domain = url?.host
         let str = "\(path)/\(domain ?? "").png"
@@ -55,6 +66,7 @@ class DetailViewController : NSViewController {
     @IBAction func editButtonClicked(_ sender: NSButton) {
         let container = self.parent as! ContainerViewController
         container.row = row
+        container.isNew = false
         container.showEditViewController()
     }
 

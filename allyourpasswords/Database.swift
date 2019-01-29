@@ -9,36 +9,23 @@
 import SQLite
 
 public struct Database {
-    static func open() -> Connection? {
+    static func open() -> Connection {
         let path = NSSearchPathForDirectoriesInDomains(
             .applicationSupportDirectory, .userDomainMask, true
-            ).first! + "/"
+            ).first! + "/" + Bundle.main.bundleIdentifier!
 
-        do {
-            try FileManager.default.createDirectory(
-                atPath: path, withIntermediateDirectories: true, attributes: nil
-            )
-        } catch {
-            #if DEBUG
-            print("Unexpected error: \(error).")
-            #endif
-        }
+        try! FileManager.default.createDirectory(
+            atPath: path, withIntermediateDirectories: true, attributes: nil
+        )
 
-        var conn : Connection?
-        do {
-            conn = try Connection("\(path)/app.db")
-            if let masterPassword = KeychainWrapper.standard.string(forKey: "MasterPassword") {
-                try conn?.key(masterPassword)
-            }
+        let masterPassword = KeychainWrapper.standard.string(forKey: "MasterPassword")
 
-            #if DEBUG
-            conn?.trace { print($0) }
-            #endif
-        } catch {
-            #if DEBUG
-            print("Unexpected error: \(error).")
-            #endif
-        }
+        let conn = try! Connection("\(path)/encrypted.sqlite3")
+        try! conn.key(masterPassword!)
+
+        #if DEBUG
+        conn.trace { print($0) }
+        #endif
 
         return conn
     }

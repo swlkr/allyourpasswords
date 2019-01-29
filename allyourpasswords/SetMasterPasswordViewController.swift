@@ -28,15 +28,22 @@ class SetMasterPasswordViewController: NSViewController {
     }
 
     func setMasterPassword(_ masterPassword: String) {
-        // set database key
-        if let db = Database.open() {
-            try! db.key(masterPassword)
+        if KeychainWrapper.standard.set(masterPassword, forKey: "MasterPassword") {
+            let db = Database.open()
+            let login = Login()
 
-            if KeychainWrapper.standard.set(masterPassword, forKey: "MasterPassword") {
-                let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
-                let viewController = storyboard.instantiateController(withIdentifier: "UnlockViewController") as! NSViewController
-                self.view.window?.contentViewController = viewController
-            }
+            try! db.run(login.table.create(ifNotExists: true) { t in
+                t.column(login.id, primaryKey: true)
+                t.column(login.name)
+                t.column(login.username)
+                t.column(login.email)
+                t.column(login.url)
+                t.column(login.password)
+            })
+
+            let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
+            let viewController = storyboard.instantiateController(withIdentifier: "MainViewController") as! MainViewController
+            self.view.window?.contentViewController = viewController
         }
     }
 }

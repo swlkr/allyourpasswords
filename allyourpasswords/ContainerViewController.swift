@@ -11,28 +11,35 @@ import SQLite
 
 class ContainerViewController : NSViewController {
 
+    var db : Connection?
     var row : Row?
-    var anyRows : Bool?
     var firstRow : Row?
+    var isNew : Bool?
     var detailViewController: DetailViewController?
     var emptyViewController: EmptyViewController?
     var editViewController: EditViewController?
 
     @IBOutlet weak var containerView: NSView!
 
-    override func viewDidLoad() {
-        let db = Database.open()
+    override func viewWillAppear() {
+        super.viewWillAppear()
+
+        db = Database.open()
         let login = Login()
+
         let rowCount = try! db?.scalar(login.table.count)
+
         firstRow = try! db?.pluck(login.table.limit(0).order(login.name, login.url))
 
-        if (rowCount! > 0) {
+        if (rowCount ?? 0 > 0) {
             row = firstRow
             showDetailViewController()
         } else {
             showEmptyViewController()
         }
+    }
 
+    override func viewDidLoad() {
         super.viewDidLoad()
     }
 
@@ -114,7 +121,8 @@ class ContainerViewController : NSViewController {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
         editViewController = storyboard.instantiateController(withIdentifier: "EditViewController") as? EditViewController
         editViewController!.row = row
-        editViewController!.anyRows = firstRow != nil
+        editViewController!.db = db
+        editViewController!.isNew = isNew
 
         addChild(editViewController!)
         editViewController!.view.frame = containerView.bounds

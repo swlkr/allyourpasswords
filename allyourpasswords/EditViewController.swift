@@ -13,8 +13,9 @@ import FavIcon
 class EditViewController : NSViewController {
 
     var row : Row?
+    var isNew : Bool?
     let login = Login()
-    var anyRows : Bool?
+    var db : Connection?
 
     @IBOutlet weak var emailTextField: NSTextField!
     @IBOutlet weak var usernameTextField: NSTextField!
@@ -29,16 +30,15 @@ class EditViewController : NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        emailTextField.stringValue = row?[login.email] ?? ""
-        usernameTextField.stringValue = row?[login.username] ?? ""
-        passwordTextField.stringValue = row?[login.password] ?? ""
-        websiteTextField.stringValue = row?[login.url] ?? ""
-        nameTextField.stringValue = row?[login.name] ?? ""
-
-        if row != nil {
+        if isNew == true {
+            passwordTextField.stringValue = randomString(passwordLengthSlider.integerValue)
             passwordLengthLabel.stringValue = "\(passwordTextField.stringValue.count)"
         } else {
-            passwordTextField.stringValue = randomString(passwordLengthSlider.integerValue)
+            emailTextField.stringValue = row?[login.email] ?? ""
+            usernameTextField.stringValue = row?[login.username] ?? ""
+            passwordTextField.stringValue = row?[login.password] ?? ""
+            websiteTextField.stringValue = row?[login.url] ?? ""
+            nameTextField.stringValue = row?[login.name] ?? ""
             passwordLengthLabel.stringValue = "\(passwordTextField.stringValue.count)"
         }
     }
@@ -53,7 +53,7 @@ class EditViewController : NSViewController {
                 if case let .success(image) = result {
                     let path = NSSearchPathForDirectoriesInDomains(
                         .applicationSupportDirectory, .userDomainMask, true
-                        ).first! + "/"
+                        ).first! + "/" + Bundle.main.bundleIdentifier!
                     let url = NSURL(fileURLWithPath: "\(path)/\(domain!).png").filePathURL!
                     image.write(to: url, fileType: .png)
                 }
@@ -65,9 +65,14 @@ class EditViewController : NSViewController {
     }
 
     @IBAction func saveButtonClicked(_ sender: NSButton) {
-        let db = Database.open()
+        if emailTextField.stringValue.isEmpty &&
+           usernameTextField.stringValue.isEmpty &&
+           nameTextField.stringValue.isEmpty &&
+            websiteTextField.stringValue.isEmpty {
+            return
+        }
 
-        if row == nil {
+        if isNew == true {
             let insert = login.table.insert(
                             login.email <- emailTextField.stringValue,
                             login.username <- usernameTextField.stringValue,
@@ -104,9 +109,10 @@ class EditViewController : NSViewController {
 
     @IBAction func cancelButtonClicked(_ sender: NSButton) {
         let container = self.parent as! ContainerViewController
+        let rowCount = try! db?.scalar(login.table.count)
 
-        if anyRows == true {
-            container.row = row
+        if rowCount ?? 0 > 0 {
+            container.row = self.row
             container.showDetailViewController()
         } else {
             container.showEmptyViewController()

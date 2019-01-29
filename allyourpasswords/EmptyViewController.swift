@@ -16,6 +16,8 @@ class EmptyViewController : NSViewController {
 
     @IBAction func addPasswordClicked(_ sender: NSButton) {
         let container = self.parent as! ContainerViewController
+        container.row = nil
+        container.isNew = true
         container.showEditViewController()
     }
     
