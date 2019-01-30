@@ -13,6 +13,9 @@
 		E812AC7021F1263800EF6386 /* SetMasterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */; };
 		E812AC7221F1288800EF6386 /* UnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC7121F1288800EF6386 /* UnlockViewController.swift */; };
 		E812AC7421F132F100EF6386 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC7321F132F100EF6386 /* MainViewController.swift */; };
+		E81FE9D72202496000303EC3 /* DevMateKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81FE9D62202496000303EC3 /* DevMateKit.framework */; };
+		E81FE9D9220249EB00303EC3 /* DevMateKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E81FE9D62202496000303EC3 /* DevMateKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E81FE9DD220250E900303EC3 /* codesign-frameworks.sh in Resources */ = {isa = PBXBuildFile; fileRef = E81FE9DC220250E900303EC3 /* codesign-frameworks.sh */; };
 		E842BCA621F14D2E00B131F2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */; };
 		E8607C582201255B00CA7EBC /* ResetMasterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8607C572201255B00CA7EBC /* ResetMasterPasswordViewController.swift */; };
 		E880587F21F571BD006B9055 /* NSImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E880587E21F571BD006B9055 /* NSImageExtensions.swift */; };
@@ -29,6 +32,19 @@
 		E8F939E221F118FE004EFBB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8F939E021F118FE004EFBB2 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E81FE9D8220249D700303EC3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E81FE9D9220249EB00303EC3 /* DevMateKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		317F99F5E2198CD7EC329DEF /* Pods-allyourpasswords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allyourpasswords.release.xcconfig"; path = "Pods/Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords.release.xcconfig"; sourceTree = "<group>"; };
 		3F81C33A9C0A4C5D426FA58B /* Pods_allyourpasswords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_allyourpasswords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +54,9 @@
 		E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMasterPasswordViewController.swift; sourceTree = "<group>"; };
 		E812AC7121F1288800EF6386 /* UnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewController.swift; sourceTree = "<group>"; };
 		E812AC7321F132F100EF6386 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E81FE9D62202496000303EC3 /* DevMateKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DevMateKit.framework; sourceTree = "<group>"; };
+		E81FE9DA22024A6200303EC3 /* allyourpasswords-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "allyourpasswords-Bridging-Header.h"; sourceTree = "<group>"; };
+		E81FE9DC220250E900303EC3 /* codesign-frameworks.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "codesign-frameworks.sh"; sourceTree = SOURCE_ROOT; };
 		E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		E8607C572201255B00CA7EBC /* ResetMasterPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetMasterPasswordViewController.swift; sourceTree = "<group>"; };
 		E880587E21F571BD006B9055 /* NSImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageExtensions.swift; sourceTree = "<group>"; };
@@ -62,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E81FE9D72202496000303EC3 /* DevMateKit.framework in Frameworks */,
 				332C8A147F4059390FBA66A5 /* Pods_allyourpasswords.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +128,8 @@
 		E8F939D921F118FD004EFBB2 /* allyourpasswords */ = {
 			isa = PBXGroup;
 			children = (
+				E81FE9DC220250E900303EC3 /* codesign-frameworks.sh */,
+				E81FE9DA22024A6200303EC3 /* allyourpasswords-Bridging-Header.h */,
 				E8F939E421F118FE004EFBB2 /* allyourpasswords.entitlements */,
 				E8F939E321F118FE004EFBB2 /* Info.plist */,
 				E8F939DA21F118FD004EFBB2 /* AppDelegate.swift */,
@@ -135,6 +157,7 @@
 		FDE2624A157184A133332DAC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E81FE9D62202496000303EC3 /* DevMateKit.framework */,
 				3F81C33A9C0A4C5D426FA58B /* Pods_allyourpasswords.framework */,
 			);
 			name = Frameworks;
@@ -152,6 +175,8 @@
 				E8F939D421F118FD004EFBB2 /* Frameworks */,
 				E8F939D521F118FD004EFBB2 /* Resources */,
 				AA49E6EC57F3A27C28F0CAE8 /* [CP] Embed Pods Frameworks */,
+				E81FE9D8220249D700303EC3 /* CopyFiles */,
+				E81FE9DE2202510400303EC3 /* Codesign Embedded Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,6 +235,7 @@
 			files = (
 				E8F939DF21F118FE004EFBB2 /* Assets.xcassets in Resources */,
 				E8F939E221F118FE004EFBB2 /* Main.storyboard in Resources */,
+				E81FE9DD220250E900303EC3 /* codesign-frameworks.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +289,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E81FE9DE2202510400303EC3 /* Codesign Embedded Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Codesign Embedded Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\n#  codesign-frameworks.sh\n#  allyourpasswords\n#\n#  Created by Sean Walker on 1/30/19.\n#  Copyright © 2019 Sean Walker. All rights reserved.\n\n# WARNING: You may have to run Clean in Xcode after changing CODE_SIGN_IDENTITY!\n\n# Verify that $CODE_SIGN_IDENTITY is set\nif [ -z \"${CODE_SIGN_IDENTITY}\" ] ; then\necho \"CODE_SIGN_IDENTITY needs to be set for framework code-signing!\"\n\nif [ \"${CONFIGURATION}\" = \"Release\" ] ; then\nexit 1\nelse\n# Code-signing is optional for non-release builds.\nexit 0\nfi\nfi\n\nif [ -z \"${CODE_SIGN_ENTITLEMENTS}\" ] ; then\necho \"CODE_SIGN_ENTITLEMENTS needs to be set for framework code-signing!\"\n\nif [ \"${CONFIGURATION}\" = \"Release\" ] ; then\nexit 1\nelse\n# Code-signing is optional for non-release builds.\nexit 0\nfi\nfi\n\nITEMS=\"\"\n\nFRAMEWORKS_DIR=\"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\nif [ -d \"$FRAMEWORKS_DIR\" ] ; then\nFRAMEWORKS=$(find \"${FRAMEWORKS_DIR}\" -depth -type d -name \"*.framework\" -or -name \"*.dylib\" -or -name \"*.bundle\" | sed -e \"s/\\(.*framework\\)/\\1\\/Versions\\/A\\//\")\nRESULT=$?\nif [[ $RESULT != 0 ]] ; then\nexit 1\nfi\n\nITEMS=\"${FRAMEWORKS}\"\nfi\n\nLOGINITEMS_DIR=\"${TARGET_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/\"\nif [ -d \"$LOGINITEMS_DIR\" ] ; then\nLOGINITEMS=$(find \"${LOGINITEMS_DIR}\" -depth -type d -name \"*.app\")\nRESULT=$?\nif [[ $RESULT != 0 ]] ; then\nexit 1\nfi\n\nITEMS=\"${ITEMS}\"$'\\n'\"${LOGINITEMS}\"\nfi\n\n# Prefer the expanded name, if available.\nCODE_SIGN_IDENTITY_FOR_ITEMS=\"${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\nif [ \"${CODE_SIGN_IDENTITY_FOR_ITEMS}\" = \"\" ] ; then\n# Fall back to old behavior.\nCODE_SIGN_IDENTITY_FOR_ITEMS=\"${CODE_SIGN_IDENTITY}\"\nfi\n\necho \"Identity:\"\necho \"${CODE_SIGN_IDENTITY_FOR_ITEMS}\"\n\necho \"Entitlements:\"\necho \"${CODE_SIGN_ENTITLEMENTS}\"\n\necho \"Found:\"\necho \"${ITEMS}\"\n\n# Change the Internal Field Separator (IFS) so that spaces in paths will not cause problems below.\n#SAVED_IFS=$IFS\n#IFS=$(echo -en \"\\n\\b\")\n\n# Loop through all items.\nfor ITEM in $ITEMS;\ndo\necho \"Signing '${ITEM}'\"\ncodesign --force --verbose --sign \"${CODE_SIGN_IDENTITY_FOR_ITEMS}\" --entitlements \"${CODE_SIGN_ENTITLEMENTS}\" \"${ITEM}\"\nRESULT=$?\nif [[ $RESULT != 0 ]] ; then\necho \"Failed to sign '${ITEM}'.\"\nIFS=$SAVED_IFS\nexit 1\nfi\ndone\n\n# Restore $IFS.\n#IFS=$SAVED_IFS\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -431,6 +475,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3822QQG8P7;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/DevMateKit.framework/Frameworks",
+				);
 				INFOPLIST_FILE = allyourpasswords/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -439,6 +488,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swlkr.allyourpasswords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "allyourpasswords/allyourpasswords-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -454,6 +504,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3822QQG8P7;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/DevMateKit.framework/Frameworks",
+				);
 				INFOPLIST_FILE = allyourpasswords/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -462,6 +517,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swlkr.allyourpasswords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "allyourpasswords/allyourpasswords-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
