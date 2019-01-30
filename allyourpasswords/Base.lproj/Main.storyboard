@@ -60,6 +60,12 @@
                                                 <action selector="addNewLogin:" target="Ady-hI-5gd" id="J3K-cX-Hku"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Change Master Password" enabled="NO" id="w2l-d8-jkg">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="changeMasterPassword:" target="Ady-hI-5gd" id="0KR-R3-N0d"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
                                         <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
                                             <connections>
@@ -200,7 +206,11 @@ CA
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="allyourpasswords" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="allyourpasswords" customModuleProvider="target">
+                    <connections>
+                        <outlet property="changeMasterPasswordMenuItem" destination="w2l-d8-jkg" id="WiQ-k4-3dW"/>
+                    </connections>
+                </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -861,6 +871,158 @@ Gw
                 <customObject id="Ohu-bc-wn4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2357" y="2265"/>
+        </scene>
+        <!--Reset Master Password View Controller-->
+        <scene sceneID="74u-Ri-GI2">
+            <objects>
+                <viewController storyboardIdentifier="ResetMasterPasswordViewController" id="J6u-tf-GKc" customClass="ResetMasterPasswordViewController" customModule="allyourpasswords" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="O4u-Yz-tie">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="tPS-2G-R0f">
+                                <rect key="frame" x="0.0" y="140" width="800" height="320"/>
+                                <view key="contentView" id="52d-5z-RgZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="800" height="320"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mTX-nI-MRw">
+                                            <rect key="frame" x="18" y="295" width="108" height="17"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Master Password" id="lR7-l6-4Yo">
+                                                <font key="font" usesAppearanceFont="YES"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BaT-ZP-78T">
+                                            <rect key="frame" x="20" y="247" width="760" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="BFC-HR-znO"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="cO6-gp-WlP" customClass="CustomTextFieldCell" customModule="allyourpasswords" customModuleProvider="target">
+                                                <font key="font" metaFont="system" size="22"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="43u-Uu-y87">
+                                            <rect key="frame" x="18" y="210" width="139" height="17"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="New Master Password" id="aMD-hX-Ma7">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YHv-rd-Lj2">
+                                            <rect key="frame" x="20" y="162" width="760" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="FrO-Qp-j9N"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="Uv5-N7-Vw3" customClass="CustomTextFieldCell" customModule="allyourpasswords" customModuleProvider="target">
+                                                <font key="font" metaFont="system" size="22"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OKi-y1-hjL">
+                                            <rect key="frame" x="18" y="125" width="160" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="2d9-Ge-VvN"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Confirm Master Password" id="js6-ZD-9MO">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JYi-qO-UbS">
+                                            <rect key="frame" x="20" y="77" width="760" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="3pL-sd-QFz"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="BXH-5o-8Vy" customClass="CustomTextFieldCell" customModule="allyourpasswords" customModuleProvider="target">
+                                                <font key="font" metaFont="system" size="22"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8tN-6q-SmE">
+                                            <rect key="frame" x="597" y="13" width="94" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="82" id="fyu-Ok-pvS"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3jB-eS-Y8d">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="cancelButtonClicked:" target="J6u-tf-GKc" id="Jvk-wA-cL3"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XJZ-ck-gHS">
+                                            <rect key="frame" x="692" y="13" width="94" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="82" id="k6i-Vp-ac7"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="y6L-WF-L5w">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="okButtonClicked:" target="J6u-tf-GKc" id="6Z7-aZ-fA4"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JYi-qO-UbS" firstAttribute="leading" secondItem="52d-5z-RgZ" secondAttribute="leading" constant="20" id="7V5-wH-tB6"/>
+                                        <constraint firstItem="BaT-ZP-78T" firstAttribute="leading" secondItem="52d-5z-RgZ" secondAttribute="leading" constant="20" id="7th-9K-2Ww"/>
+                                        <constraint firstItem="JYi-qO-UbS" firstAttribute="top" secondItem="OKi-y1-hjL" secondAttribute="bottom" constant="8" id="By6-eU-07f"/>
+                                        <constraint firstItem="BaT-ZP-78T" firstAttribute="top" secondItem="mTX-nI-MRw" secondAttribute="bottom" constant="8" id="FQR-kV-oBv"/>
+                                        <constraint firstItem="43u-Uu-y87" firstAttribute="top" secondItem="BaT-ZP-78T" secondAttribute="bottom" constant="20" id="J7m-e4-0Hu"/>
+                                        <constraint firstAttribute="trailing" secondItem="JYi-qO-UbS" secondAttribute="trailing" constant="20" id="JPz-Ti-zWU"/>
+                                        <constraint firstItem="OKi-y1-hjL" firstAttribute="leading" secondItem="JYi-qO-UbS" secondAttribute="leading" id="Jx6-tm-1Fz"/>
+                                        <constraint firstItem="YHv-rd-Lj2" firstAttribute="top" secondItem="43u-Uu-y87" secondAttribute="bottom" constant="8" id="OnU-EW-hzU"/>
+                                        <constraint firstItem="YHv-rd-Lj2" firstAttribute="leading" secondItem="52d-5z-RgZ" secondAttribute="leading" constant="20" id="Wdq-cT-SpD"/>
+                                        <constraint firstAttribute="bottom" secondItem="8tN-6q-SmE" secondAttribute="bottom" constant="20" id="bP1-HK-jnA"/>
+                                        <constraint firstItem="XJZ-ck-gHS" firstAttribute="leading" secondItem="8tN-6q-SmE" secondAttribute="trailing" constant="13" id="dHe-Wb-Buj"/>
+                                        <constraint firstAttribute="trailing" secondItem="BaT-ZP-78T" secondAttribute="trailing" constant="20" id="dwp-ac-whg"/>
+                                        <constraint firstItem="mTX-nI-MRw" firstAttribute="top" secondItem="52d-5z-RgZ" secondAttribute="top" constant="8" id="nGu-8i-mG2"/>
+                                        <constraint firstAttribute="trailing" secondItem="YHv-rd-Lj2" secondAttribute="trailing" constant="20" id="r0F-5h-gJu"/>
+                                        <constraint firstItem="mTX-nI-MRw" firstAttribute="leading" secondItem="52d-5z-RgZ" secondAttribute="leading" constant="20" id="rbi-AU-AV5"/>
+                                        <constraint firstItem="43u-Uu-y87" firstAttribute="leading" secondItem="YHv-rd-Lj2" secondAttribute="leading" id="wr1-7I-BgF"/>
+                                        <constraint firstAttribute="trailing" secondItem="XJZ-ck-gHS" secondAttribute="trailing" constant="20" id="xsg-sY-xRS"/>
+                                        <constraint firstItem="OKi-y1-hjL" firstAttribute="top" secondItem="YHv-rd-Lj2" secondAttribute="bottom" constant="20" id="yHF-00-8Yx"/>
+                                        <constraint firstAttribute="bottom" secondItem="XJZ-ck-gHS" secondAttribute="bottom" constant="20" id="zF7-Lk-inD"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="qZi-Kb-KdJ"/>
+                                </constraints>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="tPS-2G-R0f" firstAttribute="centerX" secondItem="O4u-Yz-tie" secondAttribute="centerX" id="1ff-5U-pXt"/>
+                            <constraint firstAttribute="trailing" secondItem="tPS-2G-R0f" secondAttribute="trailing" id="Gtq-mu-Pyz"/>
+                            <constraint firstItem="tPS-2G-R0f" firstAttribute="centerY" secondItem="O4u-Yz-tie" secondAttribute="centerY" id="NIO-vS-bxK"/>
+                            <constraint firstItem="tPS-2G-R0f" firstAttribute="leading" secondItem="O4u-Yz-tie" secondAttribute="leading" id="ONV-Ib-HLG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="JYi-qO-UbS" id="keT-cP-Y0H"/>
+                        <outlet property="currentMasterPasswordTextField" destination="tPS-2G-R0f" id="sAD-YX-ncl"/>
+                        <outlet property="currentPasswordTextField" destination="BaT-ZP-78T" id="SGy-XI-TCR"/>
+                        <outlet property="newPasswordTextField" destination="YHv-rd-Lj2" id="QfF-sn-yqz"/>
+                    </connections>
+                </viewController>
+                <customObject id="t03-tG-N5W" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="3215"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="KrP-XD-Z5E">
