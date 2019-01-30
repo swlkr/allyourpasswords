@@ -11,21 +11,29 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    var window : NSWindowController?
+    var storyboard : NSStoryboard?
+    @IBOutlet weak var changeMasterPasswordMenuItem: NSMenuItem!
+
     func applicationWillFinishLaunching(_ notification: Notification) {
+        NotificationCenter.default.addObserver(self, selector: #selector(enableChangeMasterPasswordMenuItem), name: NSNotification.Name(rawValue: "enableChangeMasterPasswordMenuItem"), object: nil)
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
-        let window = storyboard.instantiateController(withIdentifier: "WindowController") as! NSWindowController
+        changeMasterPasswordMenuItem.isEnabled = false
+
+        storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
+        window = storyboard?.instantiateController(withIdentifier: "WindowController") as? NSWindowController
         let masterPassword: String? = KeychainWrapper.standard.string(forKey: "MasterPassword")
         if masterPassword == nil {
-            let viewController = storyboard.instantiateController(withIdentifier: "SetMasterPasswordViewController") as! NSViewController
-            window.contentViewController = viewController
+            let viewController = storyboard?.instantiateController(withIdentifier: "SetMasterPasswordViewController") as! SetMasterPasswordViewController
+            window?.contentViewController = viewController
         } else {
-            let viewController = storyboard.instantiateController(withIdentifier: "UnlockViewController") as! NSViewController
-            window.contentViewController = viewController
+            let viewController = storyboard?.instantiateController(withIdentifier: "UnlockViewController") as! UnlockViewController
+            window?.contentViewController = viewController
         }
-        window.showWindow(self)
+
+        window?.showWindow(self)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -45,6 +53,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func copyPassword(_ sender: NSMenuItem) {
+    }
+
+    @IBAction func changeMasterPassword(_ sender: NSMenuItem) {
+        if window?.contentViewController is UnlockViewController ||
+           window?.contentViewController is SetMasterPasswordViewController {
+            return
+        }
+
+        let viewController = storyboard?.instantiateController(withIdentifier: "ResetMasterPasswordViewController") as! ResetMasterPasswordViewController
+        window?.contentViewController = viewController
+    }
+
+    @objc func enableChangeMasterPasswordMenuItem() {
+        changeMasterPasswordMenuItem.isEnabled = true
     }
 }
 

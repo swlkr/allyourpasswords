@@ -75,6 +75,8 @@ class UnlockViewController: NSViewController {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
         let viewController = storyboard.instantiateController(withIdentifier: "MainViewController") as! NSSplitViewController
         self.view.window?.contentViewController = viewController
+
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "enableChangeMasterPasswordMenuItem"), object: nil)
     }
 
     func unlockApp() {
