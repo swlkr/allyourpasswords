@@ -124,6 +124,7 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
     }
 
     @IBAction func addButtonClicked(_ sender: NSButton) {
+        searchField.resignFirstResponder()
         containerViewController?.row = row
         containerViewController?.isNew = true
         containerViewController?.showEditViewController()

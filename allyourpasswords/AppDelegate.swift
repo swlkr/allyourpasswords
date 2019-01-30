@@ -55,6 +55,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func copyPassword(_ sender: NSMenuItem) {
     }
 
+    @IBAction func saveLogin(_ sender: NSMenuItem) {
+    }
+
     @IBAction func changeMasterPassword(_ sender: NSMenuItem) {
         if window?.contentViewController is UnlockViewController ||
            window?.contentViewController is SetMasterPasswordViewController {

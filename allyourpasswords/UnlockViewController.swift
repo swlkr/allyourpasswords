@@ -89,7 +89,7 @@ class UnlockViewController: NSViewController {
         }
     }
 
-    @IBAction func unlockPressed(_ sender: Any) {
+    @IBAction func unlockPressed(_ sender: NSButton) {
         unlockApp()
     }
     

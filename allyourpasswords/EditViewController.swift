@@ -26,9 +26,15 @@ class EditViewController : NSViewController {
     @IBOutlet weak var numberButton: NSButton!
     @IBOutlet weak var symbolButton: NSButton!
     @IBOutlet weak var passwordLengthSlider: NSSlider!
+    @IBOutlet weak var saveButton: NSButton!
+    @IBOutlet weak var faviconImageView: NSImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.view.window?.defaultButtonCell = saveButton.cell as? NSButtonCell
+
+        websiteTextField.becomeFirstResponder()
 
         if isNew == true {
             passwordTextField.stringValue = randomString(passwordLengthSlider.integerValue)
@@ -40,6 +46,14 @@ class EditViewController : NSViewController {
             websiteTextField.stringValue = row?[login.url] ?? ""
             nameTextField.stringValue = row?[login.name] ?? ""
             passwordLengthLabel.stringValue = "\(passwordTextField.stringValue.count)"
+            let path = NSSearchPathForDirectoriesInDomains(
+                .applicationSupportDirectory, .userDomainMask, true
+                ).first! + "/"  + Bundle.main.bundleIdentifier!
+            let url = URL(string: row?[login.url] ?? "")
+            let domain = url?.host
+            let str = "\(path)/\(domain ?? "").png"
+            let image = NSImage(contentsOfFile: str)
+            faviconImageView.image = image
         }
     }
     @IBAction func websiteDidEndEditing(_ sender: NSTextField) {
@@ -64,21 +78,21 @@ class EditViewController : NSViewController {
         }
     }
 
-    @IBAction func saveButtonClicked(_ sender: NSButton) {
+    func saveLogin() {
         if emailTextField.stringValue.isEmpty &&
-           usernameTextField.stringValue.isEmpty &&
-           nameTextField.stringValue.isEmpty &&
+            usernameTextField.stringValue.isEmpty &&
+            nameTextField.stringValue.isEmpty &&
             websiteTextField.stringValue.isEmpty {
             return
         }
 
         if isNew == true {
             let insert = login.table.insert(
-                            login.email <- emailTextField.stringValue,
-                            login.username <- usernameTextField.stringValue,
-                            login.password <- passwordTextField.stringValue,
-                            login.name <- nameTextField.stringValue,
-                            login.url <- websiteTextField.stringValue)
+                login.email <- emailTextField.stringValue,
+                login.username <- usernameTextField.stringValue,
+                login.password <- passwordTextField.stringValue,
+                login.name <- nameTextField.stringValue,
+                login.url <- websiteTextField.stringValue)
 
             try! db?.run(insert)
 
@@ -105,6 +119,14 @@ class EditViewController : NSViewController {
         container.showDetailViewController()
 
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTableView"), object: nil)
+    }
+
+    @IBAction func saveLogin(_ sender: NSMenuItem) {
+        saveLogin()
+    }
+
+    @IBAction func saveButtonClicked(_ sender: NSButton) {
+        saveLogin()
     }
 
     @IBAction func cancelButtonClicked(_ sender: NSButton) {
