@@ -68,5 +68,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func enableChangeMasterPasswordMenuItem() {
         changeMasterPasswordMenuItem.isEnabled = true
     }
+
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
+    }
 }
 
