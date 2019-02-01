@@ -3,7 +3,7 @@ The 100% swift offline-only password manager
 
 ### In Action
 
-![](https://allyourpasswords.com/screenshot.png)
+![](quick.gif)
 
 ### No electron
 
