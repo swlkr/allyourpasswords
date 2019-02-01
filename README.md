@@ -1,6 +1,10 @@
 # allyourpasswords
 The 100% swift offline-only password manager
 
+### In Action
+
+![](https://ph-files.imgix.net/3b62e231-707b-4135-8fd3-50f3b73b7cf9?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=489.35691318327974&h=380&fit=max&dpr=2)
+
 ### No electron
 
 Although I am more proficient at making websites, I don't like electron "apps" taking away all of my battery and spinning up my CPU to 100% randomly, so swift it is.
@@ -9,8 +13,21 @@ Although I am more proficient at making websites, I don't like electron "apps" t
 
 I logged every day of the 30 day process it took me to make this thing [here on a dev focused blogging platform](https://dev.to/swlkr/day-1-making-a-native-macos-password-manager-for-people-who-hate-the-cloud-3j68)
 
+### The stack
+This is essentially a swift wrapper around SQLite that uses three open source libraries, which is why I was able to get it done in a month as a side project around my full time job.
+
+1. [SQLite.swift](https://github.com/stephencelis/SQLite.swift)
+2. [FavIcon](https://github.com/leonbreedt/FavIcon)
+3. [SQLCipher](https://github.com/sqlcipher/sqlcipher)
+
+The roles of sqlite.swift and sqlcipher are to read/write to an encrypted sqlite db that gets encrypted with the master password that you set when the app opens up. There are few columns in one table "logins" and that's pretty much it for now. Future versions will be more sophisticated, but for now it does what it says and says what it does. Wait...
+
+### Building
+
+Have a mac running macOS mojave 10.14, open up xcode, hit the play button.
+
 ### Support
 
 If you want to support future dev efforts with cold hard cash, you can buy it either from my (very basic) lander here: [allyourpasswords.com](https://allyourpasswords.com) or from the [mac app store here](https://itunes.apple.com/us/app/all-your-passwords/id1450537302?mt=12)
 
-If you don't want to pay the full price of the app in the mac app store, you can use the code ph-50 after you click the buy button on the lander, it uses paddle and devmate, so it requires an email to send the .app file to, just trying to be as upfront as possible here.
+If you don't want to pay the full price of the app in the mac app store, you can use the code ph-50 after you click the buy button on the lander, it uses paddle and devmate, so it requires an email to send the .app file to, just trying to be as upfront as possible here, oh and that code is in the nomas branch of this repo.
