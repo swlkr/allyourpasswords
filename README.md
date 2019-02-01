@@ -3,7 +3,7 @@ The 100% swift offline-only password manager
 
 ### In Action
 
-![](https://ph-files.imgix.net/3b62e231-707b-4135-8fd3-50f3b73b7cf9?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=489.35691318327974&h=380&fit=max&dpr=2)
+![](https://allyourpasswords.com/screenshot.png)
 
 ### No electron
 
