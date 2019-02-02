@@ -13,7 +13,7 @@ class DetailViewController : NSViewController {
 
     var row : Row?
     let login = Login()
-    @IBOutlet weak var nameOrUrl: NSTextField!
+    @IBOutlet weak var nameOrUrl: HyperlinkTextField!
     @IBOutlet weak var favicon: NSImageView!
     @IBOutlet weak var email: NSTextField!
     @IBOutlet weak var username: NSTextField!
@@ -21,7 +21,7 @@ class DetailViewController : NSViewController {
     @IBOutlet weak var toolbarView: NSView!
     @IBOutlet weak var plaintText: NSTextField!
     @IBOutlet weak var showButton: NSButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,9 +41,11 @@ class DetailViewController : NSViewController {
 
         let nameValue = row?[login.name]
         if (nameValue ?? "").isEmpty {
-            nameOrUrl.stringValue = row?[login.url] ?? "---"
+            nameOrUrl.stringValue = row?[login.url] ?? ""
+            nameOrUrl.href = row?[login.url] ?? ""
         } else {
-            nameOrUrl.stringValue = nameValue!
+            nameOrUrl.stringValue = nameValue ?? ""
+            nameOrUrl.href = row?[login.url] ?? ""
         }
 
         let passwordValue = row?[login.password]
@@ -87,6 +89,7 @@ class DetailViewController : NSViewController {
     @IBAction func copyUsernameClicked(_ sender: NSButton) {
         copyToPasteBoard(username.stringValue)
     }
+
     @IBAction func showButtonClicked(_ sender: NSButton) {
         plaintText.stringValue = password.stringValue
         plaintText.isHidden = !plaintText.isHidden
