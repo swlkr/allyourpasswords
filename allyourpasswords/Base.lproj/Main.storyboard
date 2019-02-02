@@ -1058,21 +1058,34 @@ DQ
                                         </constraints>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="dkk-rz-tE5"/>
                                     </imageView>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b2l-1o-Itv">
-                                        <rect key="frame" x="18" y="11" width="465" height="17"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Name" id="sGZ-nc-RL8">
-                                            <font key="font" metaFont="systemBold"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="gFB-au-8Wv" customClass="CursorChangingView" customModule="allyourpasswords" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="501" height="28"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b2l-1o-Itv" customClass="HyperlinkTextField" customModule="allyourpasswords" customModuleProvider="target">
+                                                <rect key="frame" x="18" y="5" width="465" height="17"/>
+                                                <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" title="Name" allowsEditingTextAttributes="YES" id="sGZ-nc-RL8">
+                                                    <font key="font" metaFont="systemBold"/>
+                                                    <color key="textColor" name="linkColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="L83-kT-uUh"/>
+                                            <constraint firstAttribute="bottom" secondItem="b2l-1o-Itv" secondAttribute="bottom" constant="5" id="ooZ-2M-aaN"/>
+                                            <constraint firstItem="b2l-1o-Itv" firstAttribute="top" secondItem="gFB-au-8Wv" secondAttribute="top" constant="6" id="snO-Zc-PlI"/>
+                                            <constraint firstAttribute="trailing" secondItem="b2l-1o-Itv" secondAttribute="trailing" constant="20" id="uFG-aa-SeV"/>
+                                            <constraint firstItem="b2l-1o-Itv" firstAttribute="leading" secondItem="gFB-au-8Wv" secondAttribute="leading" constant="20" id="yg6-uY-DYQ"/>
+                                        </constraints>
+                                    </customView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="HbF-lw-qz2" firstAttribute="leading" secondItem="7TO-5P-IVA" secondAttribute="leading" constant="20" id="6OU-Ub-5Zk"/>
-                                    <constraint firstItem="b2l-1o-Itv" firstAttribute="top" secondItem="HbF-lw-qz2" secondAttribute="bottom" constant="8" id="XJn-Ke-yAH"/>
-                                    <constraint firstAttribute="trailing" secondItem="b2l-1o-Itv" secondAttribute="trailing" constant="20" id="gFw-TT-5ZX"/>
-                                    <constraint firstItem="b2l-1o-Itv" firstAttribute="leading" secondItem="7TO-5P-IVA" secondAttribute="leading" constant="20" id="iwg-Oj-nJ1"/>
+                                    <constraint firstItem="gFB-au-8Wv" firstAttribute="top" secondItem="HbF-lw-qz2" secondAttribute="bottom" constant="8" id="9bZ-Td-sUw"/>
+                                    <constraint firstItem="gFB-au-8Wv" firstAttribute="leading" secondItem="7TO-5P-IVA" secondAttribute="leading" id="Axj-rZ-riP"/>
+                                    <constraint firstAttribute="trailing" secondItem="gFB-au-8Wv" secondAttribute="trailing" id="c6P-0h-Vvd"/>
                                     <constraint firstItem="HbF-lw-qz2" firstAttribute="top" secondItem="7TO-5P-IVA" secondAttribute="top" constant="12" id="jmo-ca-KKs"/>
+                                    <constraint firstAttribute="bottom" secondItem="gFB-au-8Wv" secondAttribute="bottom" id="qjJ-UA-Mwk"/>
                                     <constraint firstAttribute="height" constant="96" id="tV3-4q-0au"/>
                                 </constraints>
                             </customView>
