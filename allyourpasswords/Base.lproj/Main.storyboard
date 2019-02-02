@@ -24,6 +24,12 @@
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Check for updates..." id="urc-G6-UOx">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="checkForUpdates:" target="ErG-U1-Qyi" id="5ln-QN-rVO"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
                                         <menuItem title="Hide allyourpasswords" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
@@ -211,6 +217,7 @@ CA
                         <outlet property="changeMasterPasswordMenuItem" destination="w2l-d8-jkg" id="WiQ-k4-3dW"/>
                     </connections>
                 </customObject>
+                <customObject id="ErG-U1-Qyi" customClass="SUUpdater"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
