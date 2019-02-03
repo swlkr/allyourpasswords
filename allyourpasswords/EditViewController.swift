@@ -60,7 +60,9 @@ class EditViewController : NSViewController {
         let urlString = sender.stringValue
         let url = URL(string: urlString)
         let domain = url?.host
-        nameTextField.stringValue = domain ?? ""
+        if nameTextField.stringValue.isEmpty {
+            nameTextField.stringValue = domain ?? ""
+        }
 
         do {
             try FavIcon.downloadPreferred(url?.absoluteString ?? "") { result in
