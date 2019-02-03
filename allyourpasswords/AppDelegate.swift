@@ -17,8 +17,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillFinishLaunching(_ notification: Notification) {
         NotificationCenter.default.addObserver(self, selector: #selector(enableChangeMasterPasswordMenuItem), name: NSNotification.Name(rawValue: "enableChangeMasterPasswordMenuItem"), object: nil)
-
-        DevMateKit.sendTrackingReport(nil, delegate: nil)
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {

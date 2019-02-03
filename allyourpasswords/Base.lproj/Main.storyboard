@@ -27,7 +27,7 @@
                                         <menuItem title="Check for updates..." id="urc-G6-UOx">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="checkForUpdates:" target="ErG-U1-Qyi" id="5ln-QN-rVO"/>
+                                                <action selector="checkForUpdates:" target="CdX-PX-NEy" id="VQN-7L-Jqy"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
@@ -69,7 +69,7 @@
                                         <menuItem title="Change Master Password" enabled="NO" id="w2l-d8-jkg">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="changeMasterPassword:" target="Ady-hI-5gd" id="0KR-R3-N0d"/>
+                                                <action selector="changeMasterPassword:" target="Voe-Tx-rLC" id="EQG-WH-Tn0"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
@@ -214,10 +214,10 @@ CA
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="allyourpasswords" customModuleProvider="target">
                     <connections>
-                        <outlet property="changeMasterPasswordMenuItem" destination="w2l-d8-jkg" id="WiQ-k4-3dW"/>
+                        <outlet property="changeMasterPasswordMenuItem" destination="w2l-d8-jkg" id="sH4-jm-O2o"/>
                     </connections>
                 </customObject>
-                <customObject id="ErG-U1-Qyi" customClass="SUUpdater"/>
+                <customObject id="CdX-PX-NEy" customClass="SUUpdater"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
