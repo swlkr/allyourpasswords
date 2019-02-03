@@ -65,7 +65,7 @@ class EditViewController : NSViewController {
         }
 
         do {
-            try FavIcon.downloadPreferred(url?.absoluteString ?? "") { result in
+            try FavIcon.downloadPreferred(url!, width: 152, height: 152) { result in
                 if case let .success(image) = result {
                     let path = NSSearchPathForDirectoriesInDomains(
                         .applicationSupportDirectory, .userDomainMask, true
