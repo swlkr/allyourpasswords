@@ -41,8 +41,6 @@
 		E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMasterPasswordViewController.swift; sourceTree = "<group>"; };
 		E812AC7121F1288800EF6386 /* UnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewController.swift; sourceTree = "<group>"; };
 		E812AC7321F132F100EF6386 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		E81FE9D62202496000303EC3 /* DevMateKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DevMateKit.framework; sourceTree = "<group>"; };
-		E81FE9DA22024A6200303EC3 /* allyourpasswords-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "allyourpasswords-Bridging-Header.h"; sourceTree = "<group>"; };
 		E81FE9DC220250E900303EC3 /* codesign-frameworks.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "codesign-frameworks.sh"; sourceTree = SOURCE_ROOT; };
 		E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		E8607C572201255B00CA7EBC /* ResetMasterPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetMasterPasswordViewController.swift; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				E81FE9DC220250E900303EC3 /* codesign-frameworks.sh */,
-				E81FE9DA22024A6200303EC3 /* allyourpasswords-Bridging-Header.h */,
 				E8F939E421F118FE004EFBB2 /* allyourpasswords.entitlements */,
 				E8F939E321F118FE004EFBB2 /* Info.plist */,
 				E8F939DA21F118FD004EFBB2 /* AppDelegate.swift */,
@@ -147,7 +144,6 @@
 		FDE2624A157184A133332DAC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E81FE9D62202496000303EC3 /* DevMateKit.framework */,
 				3F81C33A9C0A4C5D426FA58B /* Pods_allyourpasswords.framework */,
 			);
 			name = Frameworks;
@@ -482,7 +478,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swlkr.allyourpasswords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "allyourpasswords/allyourpasswords-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -510,7 +506,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swlkr.allyourpasswords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "allyourpasswords/allyourpasswords-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
