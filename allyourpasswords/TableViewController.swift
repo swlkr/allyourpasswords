@@ -35,15 +35,22 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
         reloadTableView()
     }
 
-    @objc func reloadTableView() {
+    @objc func reloadTableView(_ notification: NSNotification? = nil) {
         let query = login.table.order(login.name, login.url)
         rows = Array((try! db?.prepare(query))!)
         filteredRows = rows
         tableView.reloadData()
+        var index : Int = 0
+
+        if let userInfo = notification?.userInfo {
+            let id = userInfo["id"] as? Int64
+            index = filteredRows?.firstIndex(where: { $0[login.id] == id }) ?? 0
+        }
 
         if (filteredRows?.count)! > 0 {
-            tableView.selectRowIndexes(NSIndexSet(index: 0) as IndexSet, byExtendingSelection: false)
-            containerViewController?.row = rows?[0]
+            tableView.selectRowIndexes(NSIndexSet(index: index) as IndexSet, byExtendingSelection: false)
+            tableView.scrollRowToVisible(index)
+            containerViewController?.row = rows?[index]
             containerViewController?.showDetailViewController()
         } else {
             containerViewController?.showEmptyViewController()

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		332C8A147F4059390FBA66A5 /* Pods_allyourpasswords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F81C33A9C0A4C5D426FA58B /* Pods_allyourpasswords.framework */; };
+		47AFC8E6718F856BE728665E /* Pods_allyourpasswords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1987D8BECF062F0C548516 /* Pods_allyourpasswords.framework */; };
 		E812AC6C21F1248300EF6386 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC6B21F1248300EF6386 /* KeychainItemAccessibility.swift */; };
 		E812AC6E21F1249A00EF6386 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC6D21F1249A00EF6386 /* KeychainWrapper.swift */; };
 		E812AC7021F1263800EF6386 /* SetMasterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */; };
@@ -15,7 +15,13 @@
 		E812AC7421F132F100EF6386 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC7321F132F100EF6386 /* MainViewController.swift */; };
 		E81FE9DD220250E900303EC3 /* codesign-frameworks.sh in Resources */ = {isa = PBXBuildFile; fileRef = E81FE9DC220250E900303EC3 /* codesign-frameworks.sh */; };
 		E842BCA621F14D2E00B131F2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */; };
+		E85478AF2208BE0D00A08DE3 /* Sparkle.framework in Resources */ = {isa = PBXBuildFile; fileRef = E85478A52208BAF000A08DE3 /* Sparkle.framework */; };
+		E85478B32208BE5600A08DE3 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E85478A52208BAF000A08DE3 /* Sparkle.framework */; };
+		E85478B42208BE5600A08DE3 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E85478A52208BAF000A08DE3 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E8607C582201255B00CA7EBC /* ResetMasterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8607C572201255B00CA7EBC /* ResetMasterPasswordViewController.swift */; };
+		E86688EC220A165C00AB6872 /* org.sparkle-project.InstallerStatus.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = E86688E0220A13FC00AB6872 /* org.sparkle-project.InstallerStatus.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E86688ED220A165C00AB6872 /* org.sparkle-project.InstallerConnection.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = E86688E4220A13FC00AB6872 /* org.sparkle-project.InstallerConnection.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E86688EE220A165C00AB6872 /* org.sparkle-project.InstallerLauncher.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = E86688E7220A13FC00AB6872 /* org.sparkle-project.InstallerLauncher.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E880587F21F571BD006B9055 /* NSImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E880587E21F571BD006B9055 /* NSImageExtensions.swift */; };
 		E8953AF021F11D1000BBB89E /* CustomTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */; };
 		E8953AF221F11D7300BBB89E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8953AF121F11D7300BBB89E /* Database.swift */; };
@@ -32,10 +38,36 @@
 		E8FF2E0922062AB500A5843F /* CursorChangingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF2E0822062AB500A5843F /* CursorChangingView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E85478B52208BE5600A08DE3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E85478B42208BE5600A08DE3 /* Sparkle.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E86688EB220A163B00AB6872 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				E86688EC220A165C00AB6872 /* org.sparkle-project.InstallerStatus.xpc in CopyFiles */,
+				E86688ED220A165C00AB6872 /* org.sparkle-project.InstallerConnection.xpc in CopyFiles */,
+				E86688EE220A165C00AB6872 /* org.sparkle-project.InstallerLauncher.xpc in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		317F99F5E2198CD7EC329DEF /* Pods-allyourpasswords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allyourpasswords.release.xcconfig"; path = "Pods/Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords.release.xcconfig"; sourceTree = "<group>"; };
-		3F81C33A9C0A4C5D426FA58B /* Pods_allyourpasswords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_allyourpasswords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A033CE7BA06A368453303E2B /* Pods-allyourpasswords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allyourpasswords.debug.xcconfig"; path = "Pods/Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords.debug.xcconfig"; sourceTree = "<group>"; };
+		20BA7AF6C9F77B0526BD90B0 /* Pods-allyourpasswords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allyourpasswords.debug.xcconfig"; path = "Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords.debug.xcconfig"; sourceTree = "<group>"; };
+		A7141410EFA9619B1F87471D /* Pods-allyourpasswords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allyourpasswords.release.xcconfig"; path = "Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords.release.xcconfig"; sourceTree = "<group>"; };
+		BD1987D8BECF062F0C548516 /* Pods_allyourpasswords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_allyourpasswords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E812AC6B21F1248300EF6386 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		E812AC6D21F1249A00EF6386 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMasterPasswordViewController.swift; sourceTree = "<group>"; };
@@ -43,7 +75,17 @@
 		E812AC7321F132F100EF6386 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E81FE9DC220250E900303EC3 /* codesign-frameworks.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "codesign-frameworks.sh"; sourceTree = SOURCE_ROOT; };
 		E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		E85478A52208BAF000A08DE3 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		E8607C572201255B00CA7EBC /* ResetMasterPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetMasterPasswordViewController.swift; sourceTree = "<group>"; };
+		E86688DF220A13FC00AB6872 /* org.sparkle-project.Downloader.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; path = "org.sparkle-project.Downloader.xpc"; sourceTree = "<group>"; };
+		E86688E0220A13FC00AB6872 /* org.sparkle-project.InstallerStatus.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; path = "org.sparkle-project.InstallerStatus.xpc"; sourceTree = "<group>"; };
+		E86688E1220A13FC00AB6872 /* org.sparkle-project.Downloader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "org.sparkle-project.Downloader.entitlements"; sourceTree = "<group>"; };
+		E86688E2220A13FC00AB6872 /* org.sparkle-project.Downloader.xpc.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = "org.sparkle-project.Downloader.xpc.dSYM"; sourceTree = "<group>"; };
+		E86688E3220A13FC00AB6872 /* org.sparkle-project.InstallerStatus.xpc.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = "org.sparkle-project.InstallerStatus.xpc.dSYM"; sourceTree = "<group>"; };
+		E86688E4220A13FC00AB6872 /* org.sparkle-project.InstallerConnection.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; path = "org.sparkle-project.InstallerConnection.xpc"; sourceTree = "<group>"; };
+		E86688E5220A13FC00AB6872 /* org.sparkle-project.InstallerConnection.xpc.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = "org.sparkle-project.InstallerConnection.xpc.dSYM"; sourceTree = "<group>"; };
+		E86688E6220A13FC00AB6872 /* org.sparkle-project.InstallerLauncher.xpc.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = "org.sparkle-project.InstallerLauncher.xpc.dSYM"; sourceTree = "<group>"; };
+		E86688E7220A13FC00AB6872 /* org.sparkle-project.InstallerLauncher.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; path = "org.sparkle-project.InstallerLauncher.xpc"; sourceTree = "<group>"; };
 		E880587E21F571BD006B9055 /* NSImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageExtensions.swift; sourceTree = "<group>"; };
 		E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldCell.swift; sourceTree = "<group>"; };
 		E8953AF121F11D7300BBB89E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -68,20 +110,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				332C8A147F4059390FBA66A5 /* Pods_allyourpasswords.framework in Frameworks */,
+				47AFC8E6718F856BE728665E /* Pods_allyourpasswords.framework in Frameworks */,
+				E85478B32208BE5600A08DE3 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		653FCFC2DB73BAFE788C2AD1 /* Pods */ = {
+		E7755449B5FA14C50E49FD9D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A033CE7BA06A368453303E2B /* Pods-allyourpasswords.debug.xcconfig */,
-				317F99F5E2198CD7EC329DEF /* Pods-allyourpasswords.release.xcconfig */,
+				20BA7AF6C9F77B0526BD90B0 /* Pods-allyourpasswords.debug.xcconfig */,
+				A7141410EFA9619B1F87471D /* Pods-allyourpasswords.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		E812AC6A21F1246C00EF6386 /* KeychainWrapper */ = {
@@ -93,13 +136,30 @@
 			path = KeychainWrapper;
 			sourceTree = "<group>";
 		};
+		E86688DE220A13FC00AB6872 /* XPCServices */ = {
+			isa = PBXGroup;
+			children = (
+				E86688DF220A13FC00AB6872 /* org.sparkle-project.Downloader.xpc */,
+				E86688E0220A13FC00AB6872 /* org.sparkle-project.InstallerStatus.xpc */,
+				E86688E1220A13FC00AB6872 /* org.sparkle-project.Downloader.entitlements */,
+				E86688E2220A13FC00AB6872 /* org.sparkle-project.Downloader.xpc.dSYM */,
+				E86688E3220A13FC00AB6872 /* org.sparkle-project.InstallerStatus.xpc.dSYM */,
+				E86688E4220A13FC00AB6872 /* org.sparkle-project.InstallerConnection.xpc */,
+				E86688E5220A13FC00AB6872 /* org.sparkle-project.InstallerConnection.xpc.dSYM */,
+				E86688E6220A13FC00AB6872 /* org.sparkle-project.InstallerLauncher.xpc.dSYM */,
+				E86688E7220A13FC00AB6872 /* org.sparkle-project.InstallerLauncher.xpc */,
+			);
+			path = XPCServices;
+			sourceTree = "<group>";
+		};
 		E8F939CE21F118FD004EFBB2 = {
 			isa = PBXGroup;
 			children = (
+				E86688DE220A13FC00AB6872 /* XPCServices */,
 				E8F939D921F118FD004EFBB2 /* allyourpasswords */,
 				E8F939D821F118FD004EFBB2 /* Products */,
-				653FCFC2DB73BAFE788C2AD1 /* Pods */,
 				FDE2624A157184A133332DAC /* Frameworks */,
+				E7755449B5FA14C50E49FD9D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,7 +204,8 @@
 		FDE2624A157184A133332DAC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3F81C33A9C0A4C5D426FA58B /* Pods_allyourpasswords.framework */,
+				E85478A52208BAF000A08DE3 /* Sparkle.framework */,
+				BD1987D8BECF062F0C548516 /* Pods_allyourpasswords.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,12 +217,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8F939E721F118FE004EFBB2 /* Build configuration list for PBXNativeTarget "allyourpasswords" */;
 			buildPhases = (
-				E13D9F7FA3524CFC8B2F99F8 /* [CP] Check Pods Manifest.lock */,
+				437C9AD99AA76D8F55DC3B3C /* [CP] Check Pods Manifest.lock */,
 				E8F939D321F118FD004EFBB2 /* Sources */,
 				E8F939D421F118FD004EFBB2 /* Frameworks */,
 				E8F939D521F118FD004EFBB2 /* Resources */,
-				AA49E6EC57F3A27C28F0CAE8 /* [CP] Embed Pods Frameworks */,
 				E81FE9DE2202510400303EC3 /* Codesign Embedded Frameworks */,
+				C2B73D9CB331BBB9D16EF254 /* [CP] Embed Pods Frameworks */,
+				E85478B52208BE5600A08DE3 /* Embed Frameworks */,
+				E86688EB220A163B00AB6872 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -218,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E85478AF2208BE0D00A08DE3 /* Sparkle.framework in Resources */,
 				E8F939DF21F118FE004EFBB2 /* Assets.xcassets in Resources */,
 				E8F939E221F118FE004EFBB2 /* Main.storyboard in Resources */,
 				E81FE9DD220250E900303EC3 /* codesign-frameworks.sh in Resources */,
@@ -227,37 +291,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AA49E6EC57F3A27C28F0CAE8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FavIcon/FavIcon.framework",
-				"${BUILT_PRODUCTS_DIR}/SQLCipher/SQLCipher.framework",
-				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FavIcon.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLCipher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E13D9F7FA3524CFC8B2F99F8 /* [CP] Check Pods Manifest.lock */ = {
+		437C9AD99AA76D8F55DC3B3C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -279,6 +313,32 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C2B73D9CB331BBB9D16EF254 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FavIcon/FavIcon.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLCipher/SQLCipher.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FavIcon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLCipher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E81FE9DE2202510400303EC3 /* Codesign Embedded Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,7 +355,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\n#  codesign-frameworks.sh\n#  allyourpasswords\n#\n#  Created by Sean Walker on 1/30/19.\n#  Copyright © 2019 Sean Walker. All rights reserved.\n\n# WARNING: You may have to run Clean in Xcode after changing CODE_SIGN_IDENTITY!\n\n# Verify that $CODE_SIGN_IDENTITY is set\nif [ -z \"${CODE_SIGN_IDENTITY}\" ] ; then\necho \"CODE_SIGN_IDENTITY needs to be set for framework code-signing!\"\n\nif [ \"${CONFIGURATION}\" = \"Release\" ] ; then\nexit 1\nelse\n# Code-signing is optional for non-release builds.\nexit 0\nfi\nfi\n\nif [ -z \"${CODE_SIGN_ENTITLEMENTS}\" ] ; then\necho \"CODE_SIGN_ENTITLEMENTS needs to be set for framework code-signing!\"\n\nif [ \"${CONFIGURATION}\" = \"Release\" ] ; then\nexit 1\nelse\n# Code-signing is optional for non-release builds.\nexit 0\nfi\nfi\n\nITEMS=\"\"\n\nFRAMEWORKS_DIR=\"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\nif [ -d \"$FRAMEWORKS_DIR\" ] ; then\nFRAMEWORKS=$(find \"${FRAMEWORKS_DIR}\" -depth -type d -name \"*.framework\" -or -name \"*.dylib\" -or -name \"*.bundle\" | sed -e \"s/\\(.*framework\\)/\\1\\/Versions\\/A\\//\")\nRESULT=$?\nif [[ $RESULT != 0 ]] ; then\nexit 1\nfi\n\nITEMS=\"${FRAMEWORKS}\"\nfi\n\nLOGINITEMS_DIR=\"${TARGET_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/\"\nif [ -d \"$LOGINITEMS_DIR\" ] ; then\nLOGINITEMS=$(find \"${LOGINITEMS_DIR}\" -depth -type d -name \"*.app\")\nRESULT=$?\nif [[ $RESULT != 0 ]] ; then\nexit 1\nfi\n\nITEMS=\"${ITEMS}\"$'\\n'\"${LOGINITEMS}\"\nfi\n\n# Prefer the expanded name, if available.\nCODE_SIGN_IDENTITY_FOR_ITEMS=\"${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\nif [ \"${CODE_SIGN_IDENTITY_FOR_ITEMS}\" = \"\" ] ; then\n# Fall back to old behavior.\nCODE_SIGN_IDENTITY_FOR_ITEMS=\"${CODE_SIGN_IDENTITY}\"\nfi\n\necho \"Identity:\"\necho \"${CODE_SIGN_IDENTITY_FOR_ITEMS}\"\n\necho \"Entitlements:\"\necho \"${CODE_SIGN_ENTITLEMENTS}\"\n\necho \"Found:\"\necho \"${ITEMS}\"\n\n# Change the Internal Field Separator (IFS) so that spaces in paths will not cause problems below.\n#SAVED_IFS=$IFS\n#IFS=$(echo -en \"\\n\\b\")\n\n# Loop through all items.\nfor ITEM in $ITEMS;\ndo\necho \"Signing '${ITEM}'\"\ncodesign --force --verbose --sign \"${CODE_SIGN_IDENTITY_FOR_ITEMS}\" --entitlements \"${CODE_SIGN_ENTITLEMENTS}\" \"${ITEM}\"\nRESULT=$?\nif [[ $RESULT != 0 ]] ; then\necho \"Failed to sign '${ITEM}'.\"\nIFS=$SAVED_IFS\nexit 1\nfi\ndone\n\n# Restore $IFS.\n#IFS=$SAVED_IFS\n\nLOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\n\n# By default, use the configured code signing identity for the project/target\nIDENTITY=\"${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\nif [ \"$IDENTITY\" == \"\" ]\nthen\n# If a code signing identity is not specified, use ad hoc signing\nIDENTITY=\"-\"\nfi\ncodesign --verbose --force --deep -o runtime --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A/Resources/AutoUpdate.app\"\ncodesign --verbose --force -o runtime --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"\n";
+			shellScript = "#!/bin/sh\n\n#  codesign-frameworks.sh\n#  allyourpasswords\n#\n#  Created by Sean Walker on 1/30/19.\n#  Copyright © 2019 Sean Walker. All rights reserved.\n\n# WARNING: You may have to run Clean in Xcode after changing CODE_SIGN_IDENTITY!\n\n# Verify that $CODE_SIGN_IDENTITY is set\nif [ -z \"${CODE_SIGN_IDENTITY}\" ] ; then\necho \"CODE_SIGN_IDENTITY needs to be set for framework code-signing!\"\n\nif [ \"${CONFIGURATION}\" = \"Release\" ] ; then\nexit 1\nelse\n# Code-signing is optional for non-release builds.\nexit 0\nfi\nfi\n\nif [ -z \"${CODE_SIGN_ENTITLEMENTS}\" ] ; then\necho \"CODE_SIGN_ENTITLEMENTS needs to be set for framework code-signing!\"\n\nif [ \"${CONFIGURATION}\" = \"Release\" ] ; then\nexit 1\nelse\n# Code-signing is optional for non-release builds.\nexit 0\nfi\nfi\n\nITEMS=\"\"\n\nFRAMEWORKS_DIR=\"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\nif [ -d \"$FRAMEWORKS_DIR\" ] ; then\nFRAMEWORKS=$(find \"${FRAMEWORKS_DIR}\" -depth -type d -name \"*.framework\" -or -name \"*.dylib\" -or -name \"*.bundle\" | sed -e \"s/\\(.*framework\\)/\\1\\/Versions\\/A\\//\")\nRESULT=$?\nif [[ $RESULT != 0 ]] ; then\nexit 1\nfi\n\nITEMS=\"${FRAMEWORKS}\"\nfi\n\nLOGINITEMS_DIR=\"${TARGET_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/\"\nif [ -d \"$LOGINITEMS_DIR\" ] ; then\nLOGINITEMS=$(find \"${LOGINITEMS_DIR}\" -depth -type d -name \"*.app\")\nRESULT=$?\nif [[ $RESULT != 0 ]] ; then\nexit 1\nfi\n\nITEMS=\"${ITEMS}\"$'\\n'\"${LOGINITEMS}\"\nfi\n\n# Prefer the expanded name, if available.\nCODE_SIGN_IDENTITY_FOR_ITEMS=\"${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\nif [ \"${CODE_SIGN_IDENTITY_FOR_ITEMS}\" = \"\" ] ; then\n# Fall back to old behavior.\nCODE_SIGN_IDENTITY_FOR_ITEMS=\"${CODE_SIGN_IDENTITY}\"\nfi\n\necho \"Identity:\"\necho \"${CODE_SIGN_IDENTITY_FOR_ITEMS}\"\n\necho \"Entitlements:\"\necho \"${CODE_SIGN_ENTITLEMENTS}\"\n\necho \"Found:\"\necho \"${ITEMS}\"\n\n# Change the Internal Field Separator (IFS) so that spaces in paths will not cause problems below.\n#SAVED_IFS=$IFS\n#IFS=$(echo -en \"\\n\\b\")\n\n# Loop through all items.\nfor ITEM in $ITEMS;\ndo\necho \"Signing '${ITEM}'\"\ncodesign --force --verbose --sign \"${CODE_SIGN_IDENTITY_FOR_ITEMS}\" --entitlements \"${CODE_SIGN_ENTITLEMENTS}\" \"${ITEM}\"\nRESULT=$?\nif [[ $RESULT != 0 ]] ; then\necho \"Failed to sign '${ITEM}'.\"\nIFS=$SAVED_IFS\nexit 1\nfi\ndone\n\n# Restore $IFS.\n#IFS=$SAVED_IFS\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -457,7 +517,7 @@
 		};
 		E8F939E821F118FE004EFBB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A033CE7BA06A368453303E2B /* Pods-allyourpasswords.debug.xcconfig */;
+			baseConfigurationReference = 20BA7AF6C9F77B0526BD90B0 /* Pods-allyourpasswords.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = allyourpasswords/allyourpasswords.entitlements;
@@ -485,7 +545,7 @@
 		};
 		E8F939E921F118FE004EFBB2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 317F99F5E2198CD7EC329DEF /* Pods-allyourpasswords.release.xcconfig */;
+			baseConfigurationReference = A7141410EFA9619B1F87471D /* Pods-allyourpasswords.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = allyourpasswords/allyourpasswords.entitlements;

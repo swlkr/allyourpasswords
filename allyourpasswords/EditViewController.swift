@@ -117,10 +117,12 @@ class EditViewController : NSViewController {
         }
 
         let container = self.parent as! ContainerViewController
-        container.row = self.row
+        container.row = row
         container.showDetailViewController()
 
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTableView"), object: nil)
+        let userInfo = ["id": row?[login.id]]
+
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTableView"), object: nil, userInfo: userInfo as [AnyHashable : Any])
     }
 
     @IBAction func saveLogin(_ sender: NSMenuItem) {

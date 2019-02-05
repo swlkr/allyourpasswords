@@ -27,7 +27,7 @@
                                         <menuItem title="Check for updates..." id="urc-G6-UOx">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="checkForUpdates:" target="CdX-PX-NEy" id="VQN-7L-Jqy"/>
+                                                <action selector="checkForUpdates:" target="otb-rQ-ivk" id="Ji5-N2-9FL"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
@@ -217,7 +217,7 @@ CA
                         <outlet property="changeMasterPasswordMenuItem" destination="w2l-d8-jkg" id="sH4-jm-O2o"/>
                     </connections>
                 </customObject>
-                <customObject id="CdX-PX-NEy" customClass="SUUpdater"/>
+                <customObject id="otb-rQ-ivk" customClass="SPUStandardUpdaterController"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
