@@ -1,5 +1,5 @@
 # allyourpasswords
-The 100% swift offline-only password manager
+The offline password manager. Requires macOS 10.14 or later
 
 ### In Action
 
