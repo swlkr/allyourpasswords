@@ -31,6 +31,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } else {
             let viewController = storyboard?.instantiateController(withIdentifier: "UnlockViewController") as! UnlockViewController
             window?.contentViewController = viewController
+
+            DispatchQueue.global(qos: .background).async {
+                let db = Database.open()
+                let prop = Prop()
+
+                try! db.run(prop.table.create(ifNotExists: true) { t in
+                    t.column(prop.id, primaryKey: true)
+                    t.column(prop.login)
+                    t.column(prop.name)
+                    t.column(prop.value)
+                })
+            }
+
         }
 
         window?.showWindow(self)

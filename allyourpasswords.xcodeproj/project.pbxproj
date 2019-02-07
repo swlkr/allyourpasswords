@@ -25,6 +25,7 @@
 		E880587F21F571BD006B9055 /* NSImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E880587E21F571BD006B9055 /* NSImageExtensions.swift */; };
 		E8953AF021F11D1000BBB89E /* CustomTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */; };
 		E8953AF221F11D7300BBB89E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8953AF121F11D7300BBB89E /* Database.swift */; };
+		E8C1FEF9220CB46200420A31 /* Prop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C1FEF8220CB46200420A31 /* Prop.swift */; };
 		E8F313BE21F2997E00373C79 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F313BD21F2997E00373C79 /* EditViewController.swift */; };
 		E8F313C021F299F900373C79 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F313BF21F299F900373C79 /* ContainerViewController.swift */; };
 		E8F313C221F3953600373C79 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F313C121F3953600373C79 /* EmptyViewController.swift */; };
@@ -89,6 +90,7 @@
 		E880587E21F571BD006B9055 /* NSImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageExtensions.swift; sourceTree = "<group>"; };
 		E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldCell.swift; sourceTree = "<group>"; };
 		E8953AF121F11D7300BBB89E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		E8C1FEF8220CB46200420A31 /* Prop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prop.swift; sourceTree = "<group>"; };
 		E8F313BD21F2997E00373C79 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		E8F313BF21F299F900373C79 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		E8F313C121F3953600373C79 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
@@ -174,11 +176,12 @@
 		E8F939D921F118FD004EFBB2 /* allyourpasswords */ = {
 			isa = PBXGroup;
 			children = (
-				E81FE9DC220250E900303EC3 /* codesign-frameworks.sh */,
 				E8F939E421F118FE004EFBB2 /* allyourpasswords.entitlements */,
 				E8F939E321F118FE004EFBB2 /* Info.plist */,
+				E81FE9DC220250E900303EC3 /* codesign-frameworks.sh */,
 				E8F939DA21F118FD004EFBB2 /* AppDelegate.swift */,
 				E8F313BF21F299F900373C79 /* ContainerViewController.swift */,
+				E8FF2E0822062AB500A5843F /* CursorChangingView.swift */,
 				E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */,
 				E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */,
 				E8953AF121F11D7300BBB89E /* Database.swift */,
@@ -188,8 +191,8 @@
 				E8FF2E062206263900A5843F /* HyperlinkTextField.swift */,
 				E8F7CC3D21F233F400F11AB6 /* Login.swift */,
 				E812AC7321F132F100EF6386 /* MainViewController.swift */,
-				E8FF2E0822062AB500A5843F /* CursorChangingView.swift */,
 				E880587E21F571BD006B9055 /* NSImageExtensions.swift */,
+				E8C1FEF8220CB46200420A31 /* Prop.swift */,
 				E8607C572201255B00CA7EBC /* ResetMasterPasswordViewController.swift */,
 				E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */,
 				E8F7CC3B21F2339E00F11AB6 /* TableViewController.swift */,
@@ -374,6 +377,7 @@
 				E8FF2E0922062AB500A5843F /* CursorChangingView.swift in Sources */,
 				E880587F21F571BD006B9055 /* NSImageExtensions.swift in Sources */,
 				E8F7CC3C21F2339E00F11AB6 /* TableViewController.swift in Sources */,
+				E8C1FEF9220CB46200420A31 /* Prop.swift in Sources */,
 				E8953AF221F11D7300BBB89E /* Database.swift in Sources */,
 				E812AC6E21F1249A00EF6386 /* KeychainWrapper.swift in Sources */,
 				E812AC6C21F1248300EF6386 /* KeychainItemAccessibility.swift in Sources */,
