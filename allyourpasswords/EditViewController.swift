@@ -65,13 +65,15 @@ class EditViewController : NSViewController {
         }
 
         do {
-            try FavIcon.downloadPreferred(url!, width: 152, height: 152) { result in
-                if case let .success(image) = result {
-                    let path = NSSearchPathForDirectoriesInDomains(
-                        .applicationSupportDirectory, .userDomainMask, true
-                        ).first! + "/" + Bundle.main.bundleIdentifier!
-                    let url = NSURL(fileURLWithPath: "\(path)/\(domain!).png").filePathURL!
-                    image.write(to: url, fileType: .png)
+            if url != nil {
+                try FavIcon.downloadPreferred(url!, width: 152, height: 152) { result in
+                    if case let .success(image) = result {
+                        let path = NSSearchPathForDirectoriesInDomains(
+                            .applicationSupportDirectory, .userDomainMask, true
+                            ).first! + "/" + Bundle.main.bundleIdentifier!
+                        let url = NSURL(fileURLWithPath: "\(path)/\(domain!).png").filePathURL!
+                        image.write(to: url, fileType: .png)
+                    }
                 }
             }
         } catch {
