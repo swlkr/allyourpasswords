@@ -30,4 +30,6 @@ Have a mac running macOS mojave 10.14, open up xcode, hit the play button.
 
 If you want to support future dev efforts with cold hard cash, you can buy it either from my (very basic) lander here: [allyourpasswords.com](https://allyourpasswords.com) or from the [mac app store here](https://itunes.apple.com/us/app/all-your-passwords/id1450537302?mt=12)
 
-If you don't want to pay the full price of the app in the mac app store, you can use the code ph-50 after you click the buy button on the lander, it uses paddle and devmate, so it requires an email to send the .app file to, just trying to be as upfront as possible here, oh and that code is in the nomas branch of this repo.
+If you don't want to pay the full price of the app in the mac app store, you can use the code ph-50 after you click the buy button on the lander, it uses paddle and devmate, so it requires an email to send the .app file to, just trying to be as upfront as possible here.
+
+The mas branch stands for "mac app store" and the master branch is the binary distributed through the landing page (allyourpasswords.com)
