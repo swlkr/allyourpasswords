@@ -11,7 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var window : NSWindowController?
+    var window : WindowController?
     var storyboard : NSStoryboard?
     @IBOutlet weak var changeMasterPasswordMenuItem: NSMenuItem!
 
@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         changeMasterPasswordMenuItem.isEnabled = false
 
         storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
-        window = storyboard?.instantiateController(withIdentifier: "WindowController") as? NSWindowController
+        window = storyboard?.instantiateController(withIdentifier: "WindowController") as? WindowController
         let masterPassword: String? = KeychainWrapper.standard.string(forKey: "MasterPassword")
         if masterPassword == nil {
             let viewController = storyboard?.instantiateController(withIdentifier: "SetMasterPasswordViewController") as! SetMasterPasswordViewController
@@ -85,7 +85,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         changeMasterPasswordMenuItem.isEnabled = true
     }
 
-    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+    @IBAction func reopenWindow(_ sender: NSMenuItem) {
+        window?.window?.makeKeyAndOrderFront(self)
+    }
+
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        if flag {
+            window?.window?.orderFront(self)
+        } else {
+            window?.window?.makeKeyAndOrderFront(self)
+        }
         return true
     }
 }

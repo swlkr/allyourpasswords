@@ -26,6 +26,7 @@
 		E8953AF021F11D1000BBB89E /* CustomTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */; };
 		E8953AF221F11D7300BBB89E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8953AF121F11D7300BBB89E /* Database.swift */; };
 		E8C1FEF9220CB46200420A31 /* Prop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C1FEF8220CB46200420A31 /* Prop.swift */; };
+		E8E1D9CB22222A6900B959CB /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E1D9CA22222A6900B959CB /* WindowController.swift */; };
 		E8F313BE21F2997E00373C79 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F313BD21F2997E00373C79 /* EditViewController.swift */; };
 		E8F313C021F299F900373C79 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F313BF21F299F900373C79 /* ContainerViewController.swift */; };
 		E8F313C221F3953600373C79 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F313C121F3953600373C79 /* EmptyViewController.swift */; };
@@ -91,6 +92,7 @@
 		E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldCell.swift; sourceTree = "<group>"; };
 		E8953AF121F11D7300BBB89E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		E8C1FEF8220CB46200420A31 /* Prop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prop.swift; sourceTree = "<group>"; };
+		E8E1D9CA22222A6900B959CB /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		E8F313BD21F2997E00373C79 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		E8F313BF21F299F900373C79 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		E8F313C121F3953600373C79 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */,
 				E8F7CC3B21F2339E00F11AB6 /* TableViewController.swift */,
 				E812AC7121F1288800EF6386 /* UnlockViewController.swift */,
+				E8E1D9CA22222A6900B959CB /* WindowController.swift */,
 				E8F939DE21F118FE004EFBB2 /* Assets.xcassets */,
 				E812AC6A21F1246C00EF6386 /* KeychainWrapper */,
 				E8F939E021F118FE004EFBB2 /* Main.storyboard */,
@@ -377,6 +380,7 @@
 				E8FF2E0922062AB500A5843F /* CursorChangingView.swift in Sources */,
 				E880587F21F571BD006B9055 /* NSImageExtensions.swift in Sources */,
 				E8F7CC3C21F2339E00F11AB6 /* TableViewController.swift in Sources */,
+				E8E1D9CB22222A6900B959CB /* WindowController.swift in Sources */,
 				E8C1FEF9220CB46200420A31 /* Prop.swift in Sources */,
 				E8953AF221F11D7300BBB89E /* Database.swift in Sources */,
 				E812AC6E21F1249A00EF6386 /* KeychainWrapper.swift in Sources */,

@@ -61,6 +61,11 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="File" id="bib-Uj-vzu">
                                     <items>
+                                        <menuItem title="New Window" keyEquivalent="N" id="lND-fX-2P3">
+                                            <connections>
+                                                <action selector="reopenWindow:" target="Ady-hI-5gd" id="dUr-XD-NiF"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
                                             <connections>
                                                 <action selector="addNewLogin:" target="Ady-hI-5gd" id="J3K-cX-Hku"/>
@@ -226,8 +231,8 @@ CA
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController storyboardIdentifier="WindowController" showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="All Your Passwords" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titleVisibility="hidden" id="IQv-IB-iLA">
+                <windowController storyboardIdentifier="WindowController" showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="WindowController" customModule="allyourpasswords" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" identifier="MainWindow" title="All Your Passwords" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" frameAutosaveName="AllYourPasswordsMainWindow" animationBehavior="default" tabbingIdentifier="MainWindow" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="200" y="600" width="800" height="600"/>
