@@ -138,7 +138,7 @@ class EditViewController : NSViewController {
     @IBAction func cancelButtonClicked(_ sender: NSButton) {
         let container = self.parent as! ContainerViewController
         let rowCount = try! db?.scalar(login.table.count)
-
+        
         if rowCount ?? 0 > 0 {
             container.row = self.row
             container.showDetailViewController()

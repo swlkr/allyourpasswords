@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D5BA80222653E2D006173BD /* NSTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5BA80122653E2D006173BD /* NSTableViewExtension.swift */; };
 		47AFC8E6718F856BE728665E /* Pods_allyourpasswords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1987D8BECF062F0C548516 /* Pods_allyourpasswords.framework */; };
 		E812AC6C21F1248300EF6386 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC6B21F1248300EF6386 /* KeychainItemAccessibility.swift */; };
 		E812AC6E21F1249A00EF6386 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC6D21F1249A00EF6386 /* KeychainWrapper.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D5BA80122653E2D006173BD /* NSTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTableViewExtension.swift; sourceTree = "<group>"; };
 		20BA7AF6C9F77B0526BD90B0 /* Pods-allyourpasswords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allyourpasswords.debug.xcconfig"; path = "Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords.debug.xcconfig"; sourceTree = "<group>"; };
 		A7141410EFA9619B1F87471D /* Pods-allyourpasswords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allyourpasswords.release.xcconfig"; path = "Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords.release.xcconfig"; sourceTree = "<group>"; };
 		BD1987D8BECF062F0C548516 /* Pods_allyourpasswords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_allyourpasswords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D5BA7FD2265265E006173BD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E8953AF121F11D7300BBB89E /* Database.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0D5BA7FE22652669006173BD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E8F313BF21F299F900373C79 /* ContainerViewController.swift */,
+				E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */,
+				E8F7CC3F21F238E900F11AB6 /* DetailViewController.swift */,
+				E8F313BD21F2997E00373C79 /* EditViewController.swift */,
+				E8F313C121F3953600373C79 /* EmptyViewController.swift */,
+				E812AC7321F132F100EF6386 /* MainViewController.swift */,
+				E8607C572201255B00CA7EBC /* ResetMasterPasswordViewController.swift */,
+				E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */,
+				E8F7CC3B21F2339E00F11AB6 /* TableViewController.swift */,
+				E812AC7121F1288800EF6386 /* UnlockViewController.swift */,
+				E8E1D9CA22222A6900B959CB /* WindowController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0D5BA7FF22652679006173BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E8F7CC3D21F233F400F11AB6 /* Login.swift */,
+				E8C1FEF8220CB46200420A31 /* Prop.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0D5BA8002265275E006173BD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E8FF2E0822062AB500A5843F /* CursorChangingView.swift */,
+				E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */,
+				E8FF2E062206263900A5843F /* HyperlinkTextField.swift */,
+				E880587E21F571BD006B9055 /* NSImageExtensions.swift */,
+				0D5BA80122653E2D006173BD /* NSTableViewExtension.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		E7755449B5FA14C50E49FD9D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,28 +227,14 @@
 		E8F939D921F118FD004EFBB2 /* allyourpasswords */ = {
 			isa = PBXGroup;
 			children = (
+				0D5BA8002265275E006173BD /* Components */,
+				0D5BA7FF22652679006173BD /* Models */,
+				0D5BA7FE22652669006173BD /* Views */,
+				0D5BA7FD2265265E006173BD /* Utilities */,
 				E8F939E421F118FE004EFBB2 /* allyourpasswords.entitlements */,
 				E8F939E321F118FE004EFBB2 /* Info.plist */,
 				E81FE9DC220250E900303EC3 /* codesign-frameworks.sh */,
 				E8F939DA21F118FD004EFBB2 /* AppDelegate.swift */,
-				E8F313BF21F299F900373C79 /* ContainerViewController.swift */,
-				E8FF2E0822062AB500A5843F /* CursorChangingView.swift */,
-				E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */,
-				E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */,
-				E8953AF121F11D7300BBB89E /* Database.swift */,
-				E8F7CC3F21F238E900F11AB6 /* DetailViewController.swift */,
-				E8F313BD21F2997E00373C79 /* EditViewController.swift */,
-				E8F313C121F3953600373C79 /* EmptyViewController.swift */,
-				E8FF2E062206263900A5843F /* HyperlinkTextField.swift */,
-				E8F7CC3D21F233F400F11AB6 /* Login.swift */,
-				E812AC7321F132F100EF6386 /* MainViewController.swift */,
-				E880587E21F571BD006B9055 /* NSImageExtensions.swift */,
-				E8C1FEF8220CB46200420A31 /* Prop.swift */,
-				E8607C572201255B00CA7EBC /* ResetMasterPasswordViewController.swift */,
-				E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */,
-				E8F7CC3B21F2339E00F11AB6 /* TableViewController.swift */,
-				E812AC7121F1288800EF6386 /* UnlockViewController.swift */,
-				E8E1D9CA22222A6900B959CB /* WindowController.swift */,
 				E8F939DE21F118FE004EFBB2 /* Assets.xcassets */,
 				E812AC6A21F1246C00EF6386 /* KeychainWrapper */,
 				E8F939E021F118FE004EFBB2 /* Main.storyboard */,
@@ -370,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D5BA80222653E2D006173BD /* NSTableViewExtension.swift in Sources */,
 				E8F313BE21F2997E00373C79 /* EditViewController.swift in Sources */,
 				E842BCA621F14D2E00B131F2 /* CustomTableViewCell.swift in Sources */,
 				E8F313C021F299F900373C79 /* ContainerViewController.swift in Sources */,

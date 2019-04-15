@@ -27,7 +27,9 @@ class ContainerViewController : NSViewController {
         db = Database.open()
         let login = Login()
 
-        let rowCount = try! db?.scalar(login.table.count)
+        guard let rowCount = try? db?.scalar(login.table.count) else {
+            return
+        }
 
         firstRow = try! db?.pluck(login.table.limit(0).order(login.name, login.url))
 

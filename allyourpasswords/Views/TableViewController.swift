@@ -9,7 +9,7 @@
 import Cocoa
 import SQLite
 
-class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDataSource, NSSearchFieldDelegate {
+class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDataSource, NSSearchFieldDelegate, NSTableViewClickableDelegate {
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var searchField: NSSearchField!
     @IBOutlet weak var addButton: NSButton!
@@ -119,12 +119,23 @@ class TableViewController : NSViewController, NSTableViewDelegate, NSTableViewDa
 
         return cell
     }
-
-    func tableViewSelectionDidChange(_ notification: Notification) {
-        let rowIndex = tableView.selectedRow
-
-        if rowIndex > -1, rowIndex < filteredRows?.count ?? 0 {
-            self.row = filteredRows?[rowIndex]
+    
+//    func tableViewSelectionDidChange(_ notification: Notification) {
+//        let rowIndex = tableView.selectedRow
+//
+//        if rowIndex > -1, rowIndex < filteredRows?.count ?? 0 {
+//            self.row = filteredRows?[rowIndex]
+//            containerViewController?.row = self.row
+//            containerViewController?.showDetailViewController()
+//        }
+//    }
+    
+    @nonobjc func tableView(_ tableView: NSTableView, didClickRow selectedRow: Int) {
+        tableView.selectRowIndexes(NSIndexSet(index: selectedRow) as IndexSet, byExtendingSelection: false)
+        tableView.scrollRowToVisible(selectedRow)
+        
+        if selectedRow > -1, selectedRow < filteredRows?.count ?? 0 {
+            self.row = filteredRows?[selectedRow]
             containerViewController?.row = self.row
             containerViewController?.showDetailViewController()
         }
