@@ -2,8 +2,7 @@
 //  NSTableViewExtension.swift
 //  allyourpasswords
 //
-//  Created by cognophile on 15/04/2019.
-//  Source: https://stackoverflow.com/a/42214843/5012644
+//  File created by cognophile on 15/04/2019.
 //  Copyright © 2019 Sean Walker. All rights reserved.
 //
 
