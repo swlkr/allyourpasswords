@@ -140,12 +140,10 @@
 				E8F7CC3F21F238E900F11AB6 /* DetailViewController.swift */,
 				E8F313BD21F2997E00373C79 /* EditViewController.swift */,
 				E8F313C121F3953600373C79 /* EmptyViewController.swift */,
-				E812AC7321F132F100EF6386 /* MainViewController.swift */,
 				E8607C572201255B00CA7EBC /* ResetMasterPasswordViewController.swift */,
 				E812AC6F21F1263800EF6386 /* SetMasterPasswordViewController.swift */,
 				E8F7CC3B21F2339E00F11AB6 /* TableViewController.swift */,
 				E812AC7121F1288800EF6386 /* UnlockViewController.swift */,
-				E8E1D9CA22222A6900B959CB /* WindowController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,10 +163,26 @@
 				E8FF2E0822062AB500A5843F /* CursorChangingView.swift */,
 				E8953AEF21F11D1000BBB89E /* CustomTextFieldCell.swift */,
 				E8FF2E062206263900A5843F /* HyperlinkTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0D65473E22668D5800089228 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E812AC7321F132F100EF6386 /* MainViewController.swift */,
+				E8E1D9CA22222A6900B959CB /* WindowController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0D65474122668DB100089228 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
 				E880587E21F571BD006B9055 /* NSImageExtensions.swift */,
 				0D5BA80122653E2D006173BD /* NSTableViewExtension.swift */,
 			);
-			path = Components;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E7755449B5FA14C50E49FD9D /* Pods */ = {
@@ -227,6 +241,8 @@
 		E8F939D921F118FD004EFBB2 /* allyourpasswords */ = {
 			isa = PBXGroup;
 			children = (
+				0D65474122668DB100089228 /* Extension */,
+				0D65473E22668D5800089228 /* Controllers */,
 				0D5BA8002265275E006173BD /* Components */,
 				0D5BA7FF22652679006173BD /* Models */,
 				0D5BA7FE22652669006173BD /* Views */,
