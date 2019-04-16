@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D529F19226695CC00EFF581 /* ToolbarCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D529F18226695CC00EFF581 /* ToolbarCustomView.swift */; };
 		0D5BA80222653E2D006173BD /* NSTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5BA80122653E2D006173BD /* NSTableViewExtension.swift */; };
 		47AFC8E6718F856BE728665E /* Pods_allyourpasswords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1987D8BECF062F0C548516 /* Pods_allyourpasswords.framework */; };
 		E812AC6C21F1248300EF6386 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812AC6B21F1248300EF6386 /* KeychainItemAccessibility.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D529F18226695CC00EFF581 /* ToolbarCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToolbarCustomView.swift; path = ../../../../../ToolbarCustomView.swift; sourceTree = "<group>"; };
 		0D5BA80122653E2D006173BD /* NSTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTableViewExtension.swift; sourceTree = "<group>"; };
 		20BA7AF6C9F77B0526BD90B0 /* Pods-allyourpasswords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allyourpasswords.debug.xcconfig"; path = "Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords.debug.xcconfig"; sourceTree = "<group>"; };
 		A7141410EFA9619B1F87471D /* Pods-allyourpasswords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allyourpasswords.release.xcconfig"; path = "Target Support Files/Pods-allyourpasswords/Pods-allyourpasswords.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		0D5BA7FE22652669006173BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0D529F18226695CC00EFF581 /* ToolbarCustomView.swift */,
 				E8F313BF21F299F900373C79 /* ContainerViewController.swift */,
 				E842BCA521F14D2E00B131F2 /* CustomTableViewCell.swift */,
 				E8F7CC3F21F238E900F11AB6 /* DetailViewController.swift */,
@@ -433,6 +436,7 @@
 				E880587F21F571BD006B9055 /* NSImageExtensions.swift in Sources */,
 				E8F7CC3C21F2339E00F11AB6 /* TableViewController.swift in Sources */,
 				E8E1D9CB22222A6900B959CB /* WindowController.swift in Sources */,
+				0D529F19226695CC00EFF581 /* ToolbarCustomView.swift in Sources */,
 				E8C1FEF9220CB46200420A31 /* Prop.swift in Sources */,
 				E8953AF221F11D7300BBB89E /* Database.swift in Sources */,
 				E812AC6E21F1249A00EF6386 /* KeychainWrapper.swift in Sources */,
