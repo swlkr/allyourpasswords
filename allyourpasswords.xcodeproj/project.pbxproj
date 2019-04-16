@@ -126,12 +126,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D5BA7FD2265265E006173BD /* Utilities */ = {
+		0D5BA7FD2265265E006173BD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				E8953AF121F11D7300BBB89E /* Database.swift */,
 			);
-			path = Utilities;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		0D5BA7FE22652669006173BD /* Views */ = {
@@ -179,13 +179,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		0D65474122668DB100089228 /* Extension */ = {
+		0D65474122668DB100089228 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				E880587E21F571BD006B9055 /* NSImageExtensions.swift */,
 				0D5BA80122653E2D006173BD /* NSTableViewExtension.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E7755449B5FA14C50E49FD9D /* Pods */ = {
@@ -244,12 +244,12 @@
 		E8F939D921F118FD004EFBB2 /* allyourpasswords */ = {
 			isa = PBXGroup;
 			children = (
-				0D65474122668DB100089228 /* Extension */,
+				0D65474122668DB100089228 /* Extensions */,
 				0D65473E22668D5800089228 /* Controllers */,
 				0D5BA8002265275E006173BD /* Components */,
 				0D5BA7FF22652679006173BD /* Models */,
 				0D5BA7FE22652669006173BD /* Views */,
-				0D5BA7FD2265265E006173BD /* Utilities */,
+				0D5BA7FD2265265E006173BD /* CoreData */,
 				E8F939E421F118FE004EFBB2 /* allyourpasswords.entitlements */,
 				E8F939E321F118FE004EFBB2 /* Info.plist */,
 				E81FE9DC220250E900303EC3 /* codesign-frameworks.sh */,
