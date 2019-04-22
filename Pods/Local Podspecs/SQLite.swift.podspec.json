@@ -1,6 +1,6 @@
 {
   "name": "SQLite.swift",
-  "version": "0.11.5",
+  "version": "0.11.6",
   "summary": "A type-safe, Swift-language layer over SQLite3 for iOS and OS X.",
   "description": "SQLite.swift provides compile-time confidence in SQL statement syntax and\nintent.",
   "homepage": "https://github.com/stephencelis/SQLite.swift",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/stephencelis/SQLite.swift.git",
-    "tag": "0.11.5"
+    "tag": "0.11.6"
   },
   "social_media_url": "https://twitter.com/stephencelis",
   "module_name": "SQLite",
