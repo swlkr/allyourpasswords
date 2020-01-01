@@ -89,6 +89,46 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window?.window?.makeKeyAndOrderFront(self)
     }
 
+    func escape(_ str: String) -> String {
+        if(str.contains(",")) {
+            return "\"\(str)\""
+        } else {
+            return str
+        }
+    }
+
+    @IBAction func exportAsCSV(_ sender: NSMenuItem) {
+        var csvText = "id,name,url,username,email,password\n"
+
+        let db = Database.open()
+        let login = Login()
+
+        let query = login.table.order(login.name, login.url)
+        let rows = Array(try! db.prepare(query))
+
+        for row in rows {
+            let newLine = "\(row[login.id]),\(escape(row[login.name]!)),\(escape(row[login.url]!)),\(escape(row[login.username]!)),\(escape(row[login.email]!)),\(escape(row[login.password]!))\n"
+            csvText = csvText + newLine
+        }
+
+        let savePanel = NSSavePanel()
+        savePanel.canCreateDirectories = true
+        savePanel.showsTagField = false
+        savePanel.nameFieldStringValue = "allyourpasswords.csv"
+        savePanel.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.modalPanelWindow)))
+        savePanel.begin { (result) in
+            if result.rawValue == NSApplication.ModalResponse.OK.rawValue {
+
+                do {
+                    try csvText.write(to: savePanel.url!, atomically: true, encoding: String.Encoding.utf8)
+                } catch {
+                    print("Failed to create file")
+                    print("\(error)")
+                }
+            }
+        }
+    }
+
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         if flag {
             window?.window?.orderFront(self)
